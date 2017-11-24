@@ -1,0 +1,11 @@
+$testcolor: #0ff;
+
+table{
+  border: 1px solid #ccc;
+  td{
+    color: red;
+  }
+}
+div{
+  color: $testcolor;
+}
