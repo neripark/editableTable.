@@ -1,5 +1,1 @@
-table { border: 1px solid #ccc; }
-
-table td { color: red; }
-
-div { color: #0ff; }
+body { width: 100%; min-width: 320px; max-width: 1200px; margin: 0 auto; padding: 10px; }
