@@ -6,7 +6,6 @@ var app1 = new Vue({
 	}
 });
 
-
 //テーブル行
 var tableRow = new Vue({
 	el: '#vueTable',
@@ -20,4 +19,15 @@ var tableRow = new Vue({
 	}
 });
 
-console.log($('h1').text());
+//console.log($('h1').text());
+var api = new Vue({
+	el: '#getInfoTrigger',
+	data: {info: ""},
+	methods: {
+		getAll: function(){
+			// console.log(this.xxxx);
+			// this.xxxx += 1;
+			
+		}
+	}
+})

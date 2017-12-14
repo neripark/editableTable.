@@ -29,41 +29,22 @@
           <td>{{ item.status }}</td>
         </tr>
       </tbody>
-    <!-- <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody> -->
   </table>
   
   <div id="app1">{{message}}</div>
 
+  <div id="getInfoTrigger">
+    <p @click="getAll">トリガー！</p>
+    <p>{{xxxx}}</p>
+  </div>
   
   <!-- scripts -->
+  <!-- bootstrap -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- vue -->
+  <script src="/node_modules/axios/dist/axios.min.js"></script>
   <script src="/js/vue.js"></script>
   <script src="/js/editableTable.js"></script>
 </body>
