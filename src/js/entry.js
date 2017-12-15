@@ -1,5 +1,5 @@
 const Vue = require('vue/dist/vue.js');
-//const Axios = require('axios');
+const Axios = require('axios');
 
 
 //テスト用
@@ -24,7 +24,6 @@ var tableRow = new Vue({
   }
 });
 
-//console.log($('h1').text());
 var api = new Vue({
   el: '#getInfoTrigger',
   data: {info: 1},
@@ -34,3 +33,17 @@ var api = new Vue({
     }
   }
 })
+
+var api2 = new Vue({
+  el: '#getJson',
+  data: {info: ""},
+  methods: {
+    getAll: function(){
+      Axios.get('/api/getGuestInfo.php')
+      .then(response => {
+        this.info = response.data;
+      })
+    }
+  }
+})
+
