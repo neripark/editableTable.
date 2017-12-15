@@ -5,7 +5,7 @@ const Axios = require('axios');
 import eTableComponent from './component/eTable.vue';
 //import from eTableRowComponent '../components/eTableRow.vue';
 
-Vue.component(eTableComponent);
+Vue.component('etable', eTableComponent);
 
 //Vue.config.productionTip = false
 
