@@ -5,16 +5,18 @@ const Axios = require('axios');
 import eTableComponent from './component/eTable.vue';
 //import from eTableRowComponent '../components/eTableRow.vue';
 
-//Vue.component(eTableComponent);
+Vue.component(eTableComponent);
 
-Vue.config.productionTip = false
+//Vue.config.productionTip = false
 
 //インスタンス化
 //var eTable = new Vue({
 new Vue({
   el: '#eTable',
   template: '<etable/>',
-  components: { eTableComponent }
+  components: {
+    eTableComponent
+  }
 })
 
 

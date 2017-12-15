@@ -1089,16 +1089,18 @@ var Axios = __webpack_require__(25); //const Vue = require('vue/dist/vue.js');
 
 //import from eTableRowComponent '../components/eTableRow.vue';
 
-//Vue.component(eTableComponent);
+_vue2.default.component(_eTable2.default);
 
-_vue2.default.config.productionTip = false;
+//Vue.config.productionTip = false
 
 //インスタンス化
 //var eTable = new Vue({
 new _vue2.default({
   el: '#eTable',
   template: '<etable/>',
-  components: { eTableComponent: _eTable2.default }
+  components: {
+    eTableComponent: _eTable2.default
+  }
 });
 
 //テスト用
