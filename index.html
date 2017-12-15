@@ -10,9 +10,10 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  
+
   <h1>Editable Table</h1>
-  <table id="vueTable" class="table">
+  <div id="eTable"></div>
+  <!-- <table id="vueTable" class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -29,20 +30,20 @@
           <td>{{ item.status }}</td>
         </tr>
       </tbody>
-  </table>
-  
+  </table> -->
+
   <div id="app1">{{message}}</div>
 
   <div id="getInfoTrigger">
     <p @click="getAll">トリガー！</p>
     <p>{{info}}</p>
   </div>
-  
+
   <div id="getJson">
     <p @click="getAll">トリガー2！</p>
     <p>{{info}}</p>
   </div>
-  
+
   <!-- scripts -->
   <!-- bootstrap -->
   <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->

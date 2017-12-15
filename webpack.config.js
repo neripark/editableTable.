@@ -1,7 +1,7 @@
 module.exports = {
   context: __dirname + '/src',
   entry: {
-    js: "./js/entry.js"
+    js: "./index.js"
   },
   output: {
     path: __dirname + '/dist',
@@ -16,6 +16,11 @@ module.exports = {
         query: {
           presets: ['es2015']
         }
+      },
+      {
+        test: /\.vue$/,
+        exclude: /node_modules/,
+        loader: 'vue-loader'
       }
     ]
   }
