@@ -10,7 +10,7 @@
         </tr>
       </thead>
         <tbody>
-          <eTableRowComponent v-for="(item, index) in rows">
+          <eTableRowComponent v-for="(item, index) in rows" :key="index">
           </eTableRowComponent>
         </tbody>
     </table>
