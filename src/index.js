@@ -3,9 +3,11 @@ import Vue from 'vue';
 const Axios = require('axios');
 
 import eTableComponent from './component/eTable.vue';
+import toast from './component/toast.vue';
 //import from eTableRowComponent '../components/eTableRow.vue';
 
 Vue.component('etable', eTableComponent);
+Vue.component('toast', toast);
 
 //Vue.config.productionTip = false
 
@@ -16,6 +18,13 @@ new Vue({
   template: '<etable/>',
   components: {
     eTableComponent
+  }
+})
+new Vue({
+  el: '#toastArea',
+  template: '<toast/>',
+  components: {
+    toast
   }
 })
 

@@ -9,7 +9,7 @@
           <th scope="col">Status</th>
         </tr>
       </thead>
-        <eTableRowComponent :sendrows="this.sendrows"></eTableRowComponent>
+      <eTableRowComponent :sendrows="this.sendrows"></eTableRowComponent>
     </table>
   </div>
 </template>
