@@ -11,13 +11,13 @@ Vue.component('etable', eTableComponent);
 
 //インスタンス化
 //var eTable = new Vue({
-new Vue({
-  el: '#eTable',
-  template: '<etable/>',
-  components: {
-    eTableComponent
-  }
-})
+// new Vue({
+//   el: '#eTable',
+//   template: '<etable/>',
+//   components: {
+//     eTableComponent
+//   }
+// })
 
 
 
@@ -53,3 +53,53 @@ var api2 = new Vue({
     }
   }
 })
+
+////////コンポーネントのテスト（静的データ）////////
+//親
+Vue.component('compotesttag', {
+  template: '<child message="「静的データ」"/>'
+});
+//子
+Vue.component('child', {
+  props: ['message'],
+  template: '<p>子Pタグ！データ：{{message}}</p>'
+});
+
+//インスタンス化
+new Vue({
+  el: '#compotest',
+  template: '<compotesttag/>'
+});
+
+////////コンポーネントのテスト（動的データ）////////
+//親
+Vue.component('compotesttag2', {
+  data: function(){
+    return {
+      xxx: 0
+    }
+  },
+  template: '<child2 :message="this.xxx"/>',
+  created: function(){
+    this.xxx = Math.random();
+    console.log(this.xxx);
+  }
+});
+//子
+Vue.component('child2', {
+  props: ['message'],
+  template: '<p>子Pタグ！データ：{{message}}</p>'
+});
+
+//インスタンス化
+new Vue({
+  el: '#compotest2',
+  template: '<compotesttag2/>'
+});
+
+//以下のように、コンポーネントにスタイルを記述するのはだめらしい。おそらく単一コンポーネントのみ。
+//リファレンスみたらなかった。
+// Vue.component('compotesttag', {
+//   template: '<child message="「静的データ」"/>',
+//   style: 'color: red;'
+// });
