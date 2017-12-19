@@ -5,14 +5,11 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Guest</th>
-          <th scope="col">Hnpmost</th>
+          <th scope="col">Host</th>
           <th scope="col">Status</th>
         </tr>
       </thead>
-        <tbody>
-          <eTableRowComponent v-for="(item, index) in rows" :key="index">
-          </eTableRowComponent>
-        </tbody>
+        <eTableRowComponent :sendrows="this.sendrows"></eTableRowComponent>
     </table>
   </div>
 </template>
@@ -24,7 +21,7 @@ export default {
     eTableRowComponent
   },
   data: () => {
-    return {rows: [
+    return {sendrows: [
       {guestName: 'おきあゆりょうたろう', hostName: 'neri', status: '回答待ち'},
       {guestName: 'いしだあきら', hostName: 'neri', status: '回答待ち'},
       {guestName: 'ほしそういちろう', hostName: 'neri', status: '○'},
@@ -36,4 +33,5 @@ export default {
 </script>
 
 <style lang="css">
+  /* table{color: #57bd69;} */
 </style>

@@ -11,19 +11,24 @@ Vue.component('etable', eTableComponent);
 
 //インスタンス化
 //var eTable = new Vue({
-// new Vue({
-//   el: '#eTable',
-//   template: '<etable/>',
-//   components: {
-//     eTableComponent
-//   }
-// })
+new Vue({
+  el: '#eTable',
+  template: '<etable/>',
+  components: {
+    eTableComponent
+  }
+})
 
 
 
 
 
+
+
+//////////////////////////////////////////////////
 //テスト用
+//////////////////////////////////////////////////
+
 var app1 = new Vue({
   el: '#app1',
   data: () => {
