@@ -1,7 +1,7 @@
 //const jQuery = require('jQuery');
 //const bootstrap = require('bootstrap');
 import Vue from 'vue';
-import Axios from 'axios';
+//import Axios from 'axios';
 //const Axios = require('axios');
 import eTableComponent from './component/eTable.vue';
 import toast from './component/toast.vue';
@@ -71,18 +71,18 @@ var api = new Vue({
   }
 })
 
-var api2 = new Vue({
-  el: '#getJson',
-  data: {info: ""},
-  methods: {
-    getAll: function(){
-      Axios.get('/api/getGuestInfo.php')
-      .then(response => {
-        this.info = response.data;
-      })
-    }
-  }
-})
+// var api2 = new Vue({
+//   el: '#getJson',
+//   data: {info: ""},
+//   methods: {
+//     getAll: function(){
+//       Axios.get('/api/getGuestInfo.php')
+//       .then(response => {
+//         this.info = response.data;
+//       })
+//     }
+//   }
+// })
 
 ////////コンポーネントのテスト（静的データ）////////
 //親
