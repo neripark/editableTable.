@@ -46,9 +46,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+button{
+  &.btn.btn-default{
+    color: #119988;
+  }
+}
 .modal.fade .modal-dialog{
-  top: 70%;
+  top: 55%;
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   -o-transform: translate(0,-50%);
