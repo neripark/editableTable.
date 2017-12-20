@@ -9,26 +9,34 @@
           <th scope="col">Status</th>
         </tr>
       </thead>
-      <eTableRow :sendrows="this.sendrows"></eTableRow>
+      <eTableRow :sendrows="this.sendrows.sendrows"></eTableRow>
     </table>
   </div>
 </template>
 
 <script>
+import Axios from 'axios'
 import eTableRow from './eTableRow.vue'
 export default {
+  created: function(){
+    this.getJson();
+  },
   components: {
     eTableRow
   },
-  data: () => {
-    return {sendrows: [
-      {guestName: 'おきあゆりょうたろう', hostName: 'neri', status: '回答待ち'},
-      {guestName: 'いしだあきら', hostName: 'neri', status: '回答待ち'},
-      {guestName: 'ほしそういちろう', hostName: 'neri', status: '○'},
-      {guestName: 'わかもとのりお', hostName: 'neri', status: '×'},
-      {guestName: 'よながつばさ', hostName: 'neri', status: '未'},
-      {guestName: 'しまざきのぶなが', hostName: 'neri', status: '○'}
-    ]}
+  data: function(){
+    return {
+      sendrows: ''
+    }
+  },
+  methods: {
+    getJson: function(){
+      Axios.get('/api/getGuestInfo.php')
+      .then(response => {
+        console.log(JSON.parse(response.data));
+        this.sendrows = JSON.parse(response.data);
+      })
+    }
   }
 }
 </script>

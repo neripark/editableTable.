@@ -45,14 +45,16 @@ export default {
   }
 }
 </script>
+
 <style>
 .modal.fade .modal-dialog{
-  top: 50%;
+  top: 70%;
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   -o-transform: translate(0,-50%);
   transform: translate(0,-50%);
   margin: 0 10px;
+  transition: .3s;
 }
 .modal.in .modal-dialog {
   top: 50%;
@@ -60,5 +62,7 @@ export default {
   -ms-transform: translate(0,-50%);
   -o-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  margin: 0 10px;
+  transition: .3s;
 }
 </style>
