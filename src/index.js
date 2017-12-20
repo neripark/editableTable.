@@ -1,7 +1,8 @@
-//const Vue = require('vue/dist/vue.js');
+//const jQuery = require('jQuery');
+//const bootstrap = require('bootstrap');
 import Vue from 'vue';
-const Axios = require('axios');
-
+import Axios from 'axios';
+//const Axios = require('axios');
 import eTableComponent from './component/eTable.vue';
 import toast from './component/toast.vue';
 //import from eTableRowComponent '../components/eTableRow.vue';
@@ -12,7 +13,6 @@ Vue.component('toast', toast);
 //Vue.config.productionTip = false
 
 //インスタンス化
-//var eTable = new Vue({
 new Vue({
   el: '#eTable',
   template: '<etable/>',
@@ -28,10 +28,26 @@ new Vue({
   }
 })
 
+//toastを各rowから呼び出すための記述
+// var eventHub = new Vue();
+// module.exports = eventHub;
+//export default eventHub;
 
 
-
-
+// ////////
+// var vue = new Vue({
+//   el: '#hub',
+//   data:{
+//     rowData: null
+//   },
+//   components: {
+//     etableRow: require('./component/eTableRow.vue'),
+//     toast: require('./component/toast.vue'),
+//   }
+// });
+// ////////
+// この記述は結局ダメだった。Exportできなかった。なぜ。。
+// ////////
 
 
 //////////////////////////////////////////////////
