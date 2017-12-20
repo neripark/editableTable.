@@ -46,7 +46,6 @@ export default {
 }
 </script>
 <style>
-/*打ち消し用*/
 .modal.fade .modal-dialog{
   top: 50%;
   -webkit-transform: translate(0,-50%);
