@@ -9,16 +9,16 @@
           <th scope="col">Status</th>
         </tr>
       </thead>
-      <eTableRowComponent :sendrows="this.sendrows"></eTableRowComponent>
+      <eTableRow :sendrows="this.sendrows"></eTableRow>
     </table>
   </div>
 </template>
 
 <script>
-import eTableRowComponent from './eTableRow.vue'
+import eTableRow from './eTableRow.vue'
 export default {
   components: {
-    eTableRowComponent
+    eTableRow
   },
   data: () => {
     return {sendrows: [
@@ -26,7 +26,8 @@ export default {
       {guestName: 'いしだあきら', hostName: 'neri', status: '回答待ち'},
       {guestName: 'ほしそういちろう', hostName: 'neri', status: '○'},
       {guestName: 'わかもとのりお', hostName: 'neri', status: '×'},
-      {guestName: 'よながつばさ', hostName: 'neri', status: '未'}
+      {guestName: 'よながつばさ', hostName: 'neri', status: '未'},
+      {guestName: 'しまざきのぶなが', hostName: 'neri', status: '○'}
     ]}
   }
 }
