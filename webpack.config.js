@@ -1,11 +1,12 @@
 module.exports = {
   context: __dirname + '/src',
   entry: {
-    js: "./index.js"
+    editableTable: "./index.entry.js",
+    test: "./test.entry.js"
   },
   output: {
     path: __dirname + '/dist',
-    filename: "./js/editableTable.js"
+    filename: "./js/[name].js"
   },
   module: {
     loaders: [
