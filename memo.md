@@ -26,7 +26,7 @@ TblGuestInfo
 2  | guestName  | varChar(30) |  -
 3  | hostName  | varChar(30) |  -
 4  | group  | VarChar(30) |  -
-5  | status  | Char(2) |  -
+5  | statusId  | Char(2) |  -
 
 MstStatus
 
@@ -34,6 +34,12 @@ MstStatus
 --|---|--
 1  | statusId  | Char(2) |  ○
 2  | status  | VarChar(30) |  -
+
+
+01 未
+02 回答待ち
+03 ○
+04 ×
 
 
 ## 学習メモ
