@@ -1,6 +1,6 @@
 <template lang="html">
-  <tbody>
-    <tr v-for="(item, index) in sendrows" @click="triggerToast((index));">
+  <tbody v-model="filteredStatus">
+    <tr v-for="(item, index) in rows" :key="item.key" @click="triggerToast((index));">
     <!-- <tr v-for="(item, index) in sendrows"> -->
       <th scope="row">{{ index + 1 }}</th>
       <!-- <col01 :rowData="item.guestName"></col01> -->
@@ -15,10 +15,11 @@
 // import col01 from './eTableRowCol01.vue'
 import eventHub from '../hub.js';
 export default {
-  props: ['sendrows'],
+  props: ['rows','filteredStatus'],
   methods: {
     triggerToast: function (index){
-      eventHub.$emit('showToast', this.sendrows[index]);
+      eventHub.$emit('showToast', this.rows[index]);
+      //console.log(this.filteredStatus);
     }
   }
 }

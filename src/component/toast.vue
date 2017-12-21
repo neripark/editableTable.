@@ -11,6 +11,7 @@
           <p>ゲスト：{{ guestName }}</p>
           <p>ホスト：{{ hostName }}</p>
           <p>状態：{{ status }}</p>
+          <p>状態ID：{{ statusId }}</p>
           <p>返答：{{ res }}</p>
         </div>
         <div class="modal-footer">
@@ -35,6 +36,7 @@ export default {
       guestName: null,
       hostName: null,
       status: null,
+      statusId: null,
       res: ''
     }
   },
@@ -43,10 +45,10 @@ export default {
       this.guestName = rowData.guestName;
       this.hostName = rowData.hostName;
       this.status = rowData.status;
+      this.statusId = rowData.statusId;
       $('#toast').modal('toggle');
     },
     postEditData: function(){
-      //console.log(`送信データ：${this.guestName}`);
       Axios.post('/api/updateGuestInfo.php', this.guestName)
       .then(response => {
         this.res = response
