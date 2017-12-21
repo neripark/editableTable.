@@ -1,38 +1,4 @@
-//const jQuery = require('jQuery');
-//const bootstrap = require('bootstrap');
 import Vue from 'vue';
-//import Axios from 'axios';
-//const Axios = require('axios');
-import eTableComponent from './component/eTable.vue';
-import toast from './component/toast.vue';
-//import from eTableRowComponent '../components/eTableRow.vue';
-
-Vue.component('etable', eTableComponent);
-Vue.component('toast', toast);
-
-//Vue.config.productionTip = false
-
-//インスタンス化
-new Vue({
-  el: '#eTable',
-  template: '<etable/>',
-  components: {
-    eTableComponent
-  }
-})
-new Vue({
-  el: '#toastArea',
-  template: '<toast/>',
-  components: {
-    toast
-  }
-})
-
-//toastを各rowから呼び出すための記述
-// var eventHub = new Vue();
-// module.exports = eventHub;
-//export default eventHub;
-
 
 // ////////
 // var vue = new Vue({
@@ -53,6 +19,7 @@ new Vue({
 //////////////////////////////////////////////////
 //テスト用
 //////////////////////////////////////////////////
+
 
 var app1 = new Vue({
   el: '#app1',

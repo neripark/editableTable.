@@ -11,10 +11,12 @@
           <p>ゲスト：{{ guestName }}</p>
           <p>ホスト：{{ hostName }}</p>
           <p>状態：{{ status }}</p>
+          <p>状態ID：{{ statusId }}</p>
+          <p>返答：{{ res }}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary" @click="postEditData()">Save changes</button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -23,6 +25,7 @@
 
 <script>
 import eventHub from '../hub.js';
+import Axios from 'axios';
 export default {
   created: function(){
     eventHub.$on('showToast', this.showToast);
@@ -32,7 +35,9 @@ export default {
     return {
       guestName: null,
       hostName: null,
-      status: null
+      status: null,
+      statusId: null,
+      res: ''
     }
   },
   methods: {
@@ -40,18 +45,25 @@ export default {
       this.guestName = rowData.guestName;
       this.hostName = rowData.hostName;
       this.status = rowData.status;
+      this.statusId = rowData.statusId;
       $('#toast').modal('toggle');
+    },
+    postEditData: function(){
+      Axios.post('/api/updateGuestInfo.php', this.guestName)
+      .then(response => {
+        this.res = response
+      });
     }
   }
 }
 </script>
 
 <style lang="scss">
-button{
-  &.btn.btn-default{
-    color: #119988;
-  }
-}
+// button{
+//   &.btn.btn-default{
+//     color: #119988;
+//   }
+// }
 .modal.fade .modal-dialog{
   top: 55%;
   -webkit-transform: translate(0,-50%);

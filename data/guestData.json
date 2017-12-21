@@ -1,9 +1,18 @@
-{"sendrows": [
-  {"guestName": "おきあゆりょうたろう", "hostName": "neri", "status": "回答待ち"},
-  {"guestName": "いしだあきら", "hostName": "neri", "status": "回答待ち"},
-  {"guestName": "ほしそういちろう", "hostName": "neri", "status": "○"},
-  {"guestName": "わかもとのりお", "hostName": "neri", "status": "×"},
-  {"guestName": "よながつばさ", "hostName": "neri", "status": "未"},
-  {"guestName": "しまざきのぶなが", "hostName": "neri", "status": "○"},
-  {"guestName": "ふくやまじゅん", "hostName": "neri", "status": "○"}
+{"jsonRows": [
+  {"guestName": "おきあゆりょうたろう", "hostName": "neri", "statusId": "02", "status": "回答待ち"},
+  {"guestName": "いしだあきら", "hostName": "neri", "statusId": "02", "status": "回答待ち"},
+  {"guestName": "ほしそういちろう", "hostName": "neri", "statusId": "03", "status": "○"},
+  {"guestName": "わかもとのりお", "hostName": "neri", "statusId": "04", "status": "×"},
+  {"guestName": "よながつばさ", "hostName": "park", "statusId": "01", "status": "未"},
+  {"guestName": "しまざきのぶなが", "hostName": "neri", "statusId": "03", "status": "○"},
+  {"guestName": "ふくやまじゅん", "hostName": "neri", "statusId": "03", "status": "○"},
+  {"guestName": "さくらいたかひろ", "hostName": "neri", "statusId": "03", "status": "○"},
+  {"guestName": "なかむらゆういち", "hostName": "park", "statusId": "03", "status": "○"},
+  {"guestName": "せきともかず", "hostName": "neri", "statusId": "03", "status": "○"},
+  {"guestName": "すぎやまのりあき", "hostName": "neri", "statusId": "03", "status": "○"},
+  {"guestName": "おのだいすけ", "hostName": "neri", "statusId": "04", "status": "×"},
+  {"guestName": "たちきふみひこ", "hostName": "park", "statusId": "02", "status": "回答待ち"},
+  {"guestName": "おのさかまさや", "hostName": "park", "statusId": "03", "status": "○"},
+  {"guestName": "かじゆうき", "hostName": "neri", "statusId": "03", "status": "○"},
+  {"guestName": "しものひろ", "hostName": "park", "statusId": "03", "status": "○"}
 ]}
