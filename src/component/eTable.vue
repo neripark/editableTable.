@@ -52,17 +52,17 @@ export default {
       let tmpArray = [];
 
       //フィルタ処理
-      for (var i = 0; i < tmp.length; i++){
-        for (var j = 0; j < tmp_f.length; j++) {
-          if (tmp[i].statusId == tmp_f[j].statusId){
-            tmpArray.push(this.rows.jsonRows[i]);
+      if (tmp_f.length > 0){
+        for (var i = 0; i < tmp.length; i++){
+          for (var j = 0; j < tmp_f.length; j++) {
+            if (tmp[i].statusId == tmp_f[j].statusId){
+              tmpArray.push(this.rows.jsonRows[i]);
+            }
           }
         }
+        filtered.jsonRows = tmpArray;
+        this.rows = filtered;
       }
-
-      filtered.jsonRows = tmpArray;
-      this.rows = filtered;
-
     }
   }
 }
