@@ -18,14 +18,14 @@
 ## その他メモ
 #### テーブルレイアウト
 
-TblGuestInfo
+TrnGuestInfo
 
 \#  | 列名  |  データ型  |  主キー
 --|---|--
 1  | guestId  | Char(4) |  ○
 2  | guestName  | varChar(30) |  -
 3  | hostName  | varChar(30) |  -
-4  | group  | VarChar(30) |  -
+4  | guestGroup  | VarChar(30) |  -
 5  | statusId  | Char(2) |  -
 
 MstStatus
