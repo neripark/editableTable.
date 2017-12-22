@@ -18,21 +18,25 @@
 import Axios from 'axios'
 import eTableRow from './eTableRow.vue'
 export default {
+
   created: function(){
     this.getJson();
   },
+
   components: {
     eTableRow
   },
+
   data: function(){
     return {
       rows: '',
       selectedStatus: ''
     }
   },
+
   methods: {
     getJson: function(){
-      Axios.get('/api/getGuestInfo.php')
+      Axios.get('/api/pdo.php')
       .then(response => {
 
         //仮ハードコーディング,のちに動的に取れるようにする
@@ -41,7 +45,10 @@ export default {
         ]};
         /////////////
 
-        this.rows = JSON.parse(response.data);
+        let obj = {};
+        obj.jsonRows = response.data;
+        console.log(obj);
+        this.rows = obj;
         this.filterRows();
       })
     },
