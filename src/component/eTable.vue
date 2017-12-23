@@ -87,7 +87,6 @@ export default {
     setDataLists: function(itemName){
       // ステータスとHostをgroupByしてコンポーネントのデータにセットする関数
       // GroupByでSQLを投げてもいいが通信回数を減らしたいため
-      //let arrHostList = [];
       let arrTmp = [];
 
       //console.log(this.rowsAll.length);

@@ -49,10 +49,13 @@ MstStatus
 	- これへの代替手段が、webpackを用いたrequire。
 	- entry.jsの最初に、あらかじめnpmインストールしたvueをrequireする記述を書く。
 	- ``` const Vue = require('vue/dist/vue.js'); ```
-		- このように、node_modules/vue/以下のパスもちゃんとかかないといけない。``` const Vue = require('vue'); ``` という書き方だと、node/modules/vue(.js)を探してしまってないと言われてしまう。
 			- これは ```webpack.config.js``` のloadersに/node_modules/を指定しているためそういう動きになっている？
+      - このように、node_modules/vue/以下のパスもちゃんとかかないといけない。``` const Vue = require('vue'); ``` という書き方だと、node/modules/vue(.js)を探してしまってないと言われてしまう。
 - 単一ファイルコンポーネント同士（親子関係なし）の通信が厄介だった。
   - 結果的に ```src/hub.js``` を作成して対応できたが、やり方があっているのか謎だし、```src/index.entry.js``` に直接書くやり方だとなぜか```module.exports```できなかった。（何をexportしても（VueインスタンスとDateインスタンスは試した）渡された側で見ると中身に変化がなかった）
 - vue.jsとは直接関係ないが、REST APIからJSONファイルをレコード単位で更新するやり方が不明。
   - よくよく考えてみれば、JSONは単なるテキストファイルなのでデータベース的な使い方には不向き。→RDBMSを使用したデータ管理に切り替える。バックエンドの知識と経験ほしい...
 - webpack.config.js の書き方は要練習。リファレンスを読む力...
+- style-loader はcssをJsとして出力するモジュール。CSSファイルとして出力するには、```webpack.config.js```でExtractTextPluginを使う。先頭でrequireし、module.exports の中で pluginsで定義してやる。loaderの中でも使う。
+- ```webpack.config.js``` でexportsする設定はオブジェクト形式なので、配列に入れてやれば複数出力することができる。今回は個別SassとVue.js用で２つ用意した。
+-
