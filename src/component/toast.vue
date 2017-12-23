@@ -64,18 +64,18 @@ export default {
 //     color: #119988;
 //   }
 // }
-.modal.fade .modal-dialog{
-  top: 55%;
-  left: calc(50% - 10px);
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  margin: 0 10px;
-  transition: .3s;
-}
-.modal.in .modal-dialog {
-  top: 50%;
-  transition: .3s;
-}
+// .modal.fade .modal-dialog{
+//   top: 55%;
+//   left: calc(50% - 10px);
+//   -webkit-transform: translate(-50%,-50%);
+//   -ms-transform: translate(-50%,-50%);
+//   -o-transform: translate(-50%,-50%);
+//   transform: translate(-50%,-50%);
+//   margin: 0 10px;
+//   transition: .3s;
+// }
+// .modal.in .modal-dialog {
+//   top: 50%;
+//   transition: .3s;
+// }
 </style>
