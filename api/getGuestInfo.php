@@ -1,4 +1,5 @@
 <?php
+//固定Json読み取り用 DB化したためもう使わない
 $jsonUrl = "../data/guestData.json";
 $json = file_get_contents($jsonUrl);
 $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');

@@ -40,7 +40,7 @@ export default {
   methods: {
     getTableData: function(){
       //apiをキックしテーブルデータを取得
-      Axios.get('/api/pdo.php')
+      Axios.get('/api/selectAll.php')
       .then(response => {
 
         //仮ハードコーディング,のちに動的に取れるようにする
