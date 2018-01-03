@@ -1,12 +1,24 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import Axios from 'axios';
+import Axios from 'axios'
+// import {Popover, Switch, Button} from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+
 import eTableComponent from './component/eTable.vue';
 import toast from './component/toast.vue';
 
+//element-ui
+// import ElementUI from 'element-ui'
+
+import uiTestComponent from './component/uiTest.vue'
+
 Vue.use(Vuex);
+// Vue.use(ElementUI);
+
 Vue.component('etable', eTableComponent);
 Vue.component('toast', toast);
+Vue.component('uitest', uiTestComponent);
 
 //store
 const store = new Vuex.Store({
@@ -68,6 +80,16 @@ Axios.get('/api/selectAll.php')
 //     }
 //   }
 // });
+
+//element-ui テスト
+new Vue({
+  el: "#uiTest",
+  template: '<uitest/>',
+  components: {
+    uiTestComponent
+  }
+});
+
 
 
 //インスタンス化
