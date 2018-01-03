@@ -4,9 +4,9 @@ import Axios from 'axios';
 import eTableComponent from './component/eTable.vue';
 import toast from './component/toast.vue';
 
+Vue.use(Vuex);
 Vue.component('etable', eTableComponent);
 Vue.component('toast', toast);
-Vue.use(Vuex);
 
 //store
 const store = new Vuex.Store({
@@ -19,8 +19,13 @@ const store = new Vuex.Store({
     }
   },
   actions:{
-    getAllData(){
-
+    // getAllData(){
+    //
+    // }
+  },
+  getters: {
+    getUniqueStatuses: state => {
+      return state.allData;
     }
   }
 });
@@ -28,7 +33,7 @@ const store = new Vuex.Store({
 //ストアに初期データセット
 Axios.get('/api/selectAll.php')
 .then(response => {
-  store.state.allData = response;
+  store.state.allData = response.data;
 });
 
 
@@ -68,6 +73,7 @@ Axios.get('/api/selectAll.php')
 //インスタンス化
 new Vue({
   el: '#eTable',
+  store,
   template: '<etable/>',
   components: {
     eTableComponent
@@ -75,6 +81,7 @@ new Vue({
 })
 new Vue({
   el: '#toastArea',
+  store,
   template: '<toast/>',
   components: {
     toast
