@@ -11,7 +11,8 @@ Vue.component('toast', toast);
 //store
 const store = new Vuex.Store({
   state: {
-    allData: {}
+    allData: {},
+    allStatus: {}
   },
   mutations:{
     saveAllData(tmp){
@@ -22,11 +23,6 @@ const store = new Vuex.Store({
     // getAllData(){
     //
     // }
-  },
-  getters: {
-    getUniqueStatuses: state => {
-      return state.allData;
-    }
   }
 });
 
@@ -34,6 +30,10 @@ const store = new Vuex.Store({
 Axios.get('/api/selectAll.php')
 .then(response => {
   store.state.allData = response.data;
+});
+Axios.get('/api/selectAllStatus.php')
+.then(response => {
+  store.state.allStatus = response.data;
 });
 
 
