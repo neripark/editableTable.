@@ -3,6 +3,8 @@ import Vuex from 'vuex';
 import Axios from 'axios';
 import eTableComponent from './component/eTable.vue';
 import toast from './component/toast.vue';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 Vue.use(Vuex);
 Vue.component('etable', eTableComponent);
