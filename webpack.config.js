@@ -1,4 +1,4 @@
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
+//let ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = [
   {
     context: __dirname + '/src',
@@ -29,7 +29,20 @@ module.exports = [
               scss: 'vue-style-loader!css-loader!sass-loader'
             }
           }
+        },
+        {
+          test: /\.scss$/,
+          use: ['style-loader','css-loader','sass-loader']
+        },
+        {
+          test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+          loader: 'file-loader?name=./js/[name].[ext]'
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
+          loader: 'file-loader?name=./js/[name].[ext]'
         }
+
       ]
     },
     resolve: {
@@ -37,27 +50,28 @@ module.exports = [
         vue: 'vue/dist/vue.esm.js'
       }
     }
-  },
-  {
-    context: __dirname + '/src',
-    entry: {
-      style: "./sass/style.scss"
-    },
-    output: {
-      path: __dirname + '/dist',
-      filename: "./css/[name].css"
-    },
-    module: {
-      loaders: [
-        {
-          test: /\.scss$/,
-          exclude: /node_modules/,
-          loader: ExtractTextPlugin.extract('css-loader!sass-loader')
-        }
-      ]
-    },
-    plugins: [
-      new ExtractTextPlugin('./css/[name].css')
-    ]
   }
+  // ,
+  // {
+  //   context: __dirname + '/src',
+  //   entry: {
+  //     style: "./sass/style.scss"
+  //   },
+  //   output: {
+  //     path: __dirname + '/dist',
+  //     filename: "./css/[name].css"
+  //   },
+  //   module: {
+  //     loaders: [
+  //       {
+  //         test: /\.scss$/,
+  //         exclude: /node_modules/,
+  //         loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+  //       }
+  //     ]
+  //   },
+  //   plugins: [
+  //     new ExtractTextPlugin('./css/[name].css')
+  //   ]
+  // }
 ]
