@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// 独自の変数
+// 変数で「!default」となっているものは先に同じ名前があると適用されないので
+// bootstrapの変数も上書きできる
+@import "./variables";
+
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 
 body{

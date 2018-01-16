@@ -1,10 +1,10 @@
 //let ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = [
   {
-    context: __dirname + '/src',
+    // context: __dirname + '/src',
     entry: {
-      editableTable: "./index.entry.js",
-      test: "./test.entry.js"
+      editableTable: "./src/index.entry.js",
+      test: "./src/test.entry.js"
     },
     output: {
       path: __dirname + '/dist',
@@ -36,11 +36,21 @@ module.exports = [
         },
         {
           test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-          loader: 'file-loader?name=./js/[name].[ext]'
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: './assets/',
+            publicPath: './dist/'
+          }
         },
         {
           test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
-          loader: 'file-loader?name=./js/[name].[ext]'
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: './assets/',
+            publicPath: './dist/'
+          }
         }
 
       ]
