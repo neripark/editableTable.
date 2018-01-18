@@ -17,7 +17,7 @@
       <!-- <eTableRow :rows="this.rowsAll" :filteredStatus="this.selectedStatus"></eTableRow> -->
       <eTableRow :rows="rowsAll"></eTableRow>
     </table>
-    <popOver :uketori="displayCss" :vl="thr"></popOver>
+    <popOver :showFlg="popOverShowFlg" :vl="thr"></popOver>
   </div>
 </template>
 
@@ -37,7 +37,7 @@ export default{
     return {
       dataA: "Host",
       dataB: "Guest",
-      displayCss: false,
+      popOverShowFlg: false,
       thr: "string"
     };
   },
@@ -52,7 +52,7 @@ export default{
   methods: {
     showChbGp(val){
       console.log(`checkbox ${val}`);
-      this.displayCss = !(this.displayCss);
+      this.popOverShowFlg = !(this.popOverShowFlg);
       this.thr = val;
     }
   }
