@@ -10,14 +10,14 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Guest</th>
-          <th scope="col" @click="showChbGp(dataA)">{{dataA}}</th>
-          <th scope="col" @click="showChbGp(dataB)">{{dataB}}</th>
+          <th scope="col" @click="showChbGp(dataA, 5)">{{dataA}}</th>
+          <th scope="col" @click="showChbGp(dataB, 6)">{{dataB}}</th>
         </tr>
       </thead>
       <!-- <eTableRow :rows="this.rowsAll" :filteredStatus="this.selectedStatus"></eTableRow> -->
       <eTableRow :rows="rowsAll"></eTableRow>
     </table>
-    <popOver :showFlg="popOverShowFlg" :vl="thr"></popOver>
+    <popOver :showFlg="popOverShowFlg" :right="right" :vl="vv"></popOver>
   </div>
 </template>
 
@@ -38,7 +38,8 @@ export default{
       dataA: "Host",
       dataB: "Guest",
       popOverShowFlg: false,
-      thr: "string"
+      right: 0,
+      vv: "string"
     };
   },
   computed: {
@@ -50,10 +51,13 @@ export default{
     eTableRow, popOver
   },
   methods: {
-    showChbGp(val){
+    showChbGp(data,val){
       console.log(`checkbox ${val}`);
+      //console.log(this.getBoundingClientRect());
       this.popOverShowFlg = !(this.popOverShowFlg);
-      this.thr = val;
+      this.right = val;
+      this.vv = data;
+      console.log('rightプロパティ：' + this.right);
     }
   }
 }

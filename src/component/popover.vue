@@ -1,10 +1,10 @@
 <template lang="html">
-  <div v-show="showFlg" class="popover bottom">
+  <div v-show="showFlg" class="popover bottom" :style="popOverStyle">
     <div class="arrow"></div>
     <div class="popover-content">
-      <p class="lead">This is lead text. {{vl}}</p>
+      <p class="lead">This is lead text. </p>
       <div class="chbArea">
-        <p>{{options}}</p>
+        <p>{{vl}}</p>
         <label><input type="checkbox">テスト</label>
       </div>
     </div>
@@ -13,7 +13,14 @@
 
 <script>
 export default {
-  props: ['showFlg', 'vl']
+  props: ['showFlg', 'right', 'vl'],
+  computed: {
+    popOverStyle: function(){
+      return {
+          right: `${this.right}px`
+      }
+    }
+  }
 }
 </script>
 
