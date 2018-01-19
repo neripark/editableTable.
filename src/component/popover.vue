@@ -1,6 +1,6 @@
 <template lang="html">
-  <div v-show="showFlg" class="popover bottom" :style="popOverStyle">
-    <div class="arrow"></div>
+  <div v-show="showFlg" class="popover bottom">
+    <div class="arrow" :style="arrowStyle"></div>
     <div class="popover-content">
       <p class="lead">This is lead text. </p>
       <div class="chbArea">
@@ -15,9 +15,9 @@
 export default {
   props: ['showFlg', 'right', 'vl'],
   computed: {
-    popOverStyle: function(){
+    arrowStyle: function(){
       return {
-          right: `${this.right}px`
+          'margin-right': `${this.right}px`
       }
     }
   }
@@ -30,5 +30,8 @@ export default {
   top: 32px;
   left: auto;
   right: 0;
+  &.bottom > .arrow{
+    margin-left: 0;
+  }
 }
 </style>

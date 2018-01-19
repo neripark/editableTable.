@@ -5,8 +5,8 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Guest</th>
-          <th scope="col" @click="showChbGp(dataA, 5)">{{dataA}}</th>
-          <th scope="col" @click="showChbGp(dataB, 6)">{{dataB}}</th>
+          <th scope="col" @click="showChbGp(arguments[0], dataA)">{{dataA}}</th>
+          <th scope="col" @click="showChbGp(arguments[0], dataB)">{{dataB}}</th>
         </tr>
       </thead>
       <eTableRow :rows="rowsAll"></eTableRow>
@@ -37,9 +37,9 @@ export default{
     eTableRow, popOver
   },
   methods: {
-    showChbGp(data,val){
+    showChbGp(e, data){
       this.popOverShowFlg = !(this.popOverShowFlg);
-      this.right = val;
+      this.right = window.innerWidth - e.clientX;
       this.vv = data;
     }
   }
