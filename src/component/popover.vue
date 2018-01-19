@@ -17,7 +17,7 @@ export default {
   computed: {
     arrowStyle: function(){
       return {
-          'margin-right': `${this.right}px`
+          'right': `${this.right}px`
       }
     }
   }
@@ -30,8 +30,10 @@ export default {
   top: 32px;
   left: auto;
   right: 0;
+  min-width: 230px;
   &.bottom > .arrow{
     margin-left: 0;
+    left: auto;
   }
 }
 </style>
