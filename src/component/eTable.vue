@@ -5,11 +5,11 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Guest</th>
-          <th scope="col" @click="showChbGp(dataA, $event)">
+          <th scope="col" @click="showChbGp(dataA, $event)" :class="{'filterOn': selected}">
             <span class="filterCol">{{dataA}}</span>
             <span class="glyphicon glyphicon-filter"></span>
           </th>
-          <th scope="col" @click="showChbGp(dataB, $event)">
+          <th scope="col" @click="showChbGp(dataB, $event)" :class="{'filterOn': selected}">
             <span class="filterCol">{{dataB}}</span>
             <span class="glyphicon glyphicon-filter"></span>
           </th>
@@ -31,7 +31,8 @@ export default{
       dataB: "Guest",
       popOverShowFlg: false,
       right: 0,
-      vv: "string"
+      vv: "string",
+      selected: false
     };
   },
   computed: {
@@ -52,6 +53,7 @@ export default{
       const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
       this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
       this.vv = data;
+      this.selected = !(this.selected);
     }
   }
 }
