@@ -5,12 +5,14 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Guest</th>
-          <th scope="col">
-            <span class="filterCol" @click="showChbGp(arguments[0], dataA)">
-              {{dataA}}<span class="glyphicon glyphicon-filter"></span>
-            </span>
+          <th scope="col" @click="showChbGp(dataA, $event)">
+            <span class="filterCol">{{dataA}}</span>
+            <span class="glyphicon glyphicon-filter"></span>
           </th>
-          <th scope="col" @click="showChbGp(arguments[0], dataB)"><span>{{dataB}}</span><span class="glyphicon glyphicon-filter"></span></th>
+          <th scope="col" @click="showChbGp(dataB, $event)">
+            <span class="filterCol">{{dataB}}</span>
+            <span class="glyphicon glyphicon-filter"></span>
+          </th>
         </tr>
       </thead>
       <eTableRow :rows="rowsAll"></eTableRow>
@@ -41,11 +43,14 @@ export default{
     eTableRow, popOver
   },
   methods: {
-    showChbGp(e, data){
-      //e.preventDefault = false;
+    showChbGp(data, e){
+      console.log(e.currentTarget.parentElement.offsetWidth);
+
+      console.log('------');
+
       this.popOverShowFlg = !(this.popOverShowFlg);
-      let offsetCenter = e.srcElement.offsetLeft + (e.srcElement.offsetWidth) / 2;
-      this.right = window.innerWidth - offsetCenter;
+      const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
+      this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
       this.vv = data;
     }
   }
@@ -55,15 +60,18 @@ export default{
 <style lang="scss">
   #eTable{
     position: relative;
-    th .filterCol{
-      background-color: #eee;
-      width: 100%;
-      box-sizing: border-box;
-      display: inline-block;
-      .glyphicon-filter:before{
-        //フィルタアイコンの大きさ調整
-        font-size: 0.8em;
-        padding-left: 0.4em;
+    th{
+      &.filterOn{ //フィルタpopoverが呼ばれたthに色をつける
+        color: #52bd7e;
+      }
+      .filterCol{
+        box-sizing: border-box;
+        display: inline-block;
+        .glyphicon-filter:before{
+          //フィルタアイコンの大きさ調整
+          font-size: 0.8em;
+          padding-left: 0.4em;
+        }
       }
     }
   }
