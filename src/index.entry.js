@@ -14,16 +14,13 @@ Vue.component('toast', toast);
 //store
 let store = new Vuex.Store({
   state: {
-    allData: [
-      {guestGroup: "G1",guestId: "0005",guestName: "よなが",hostName: "koteiData",show: true,status: "未",statusId: "01"},
-      {guestGroup: "G1",guestId: "0006",guestName: "つばさ",hostName: "koteiData",show: true,status: "未",statusId: "01"}
-    ],
-    allStatus: {},
-    allHosts: {}
+    allData: [],
+    allStatus: [],
+    allHosts: []
   },
   mutations:{
-    saveAllData(tmp){
-      state = tmp;
+    setAllData(state, obj){
+      state.allData = obj;
     }
   },
   actions:{
@@ -41,9 +38,7 @@ let store = new Vuex.Store({
 //ストアに初期データセット
 Axios.get('/api/selectAll.php')
 .then(response => {
-  // store.state.allData = response.data;
-  console.log(response.data[0]);
-  console.log(store.state.allData[0]);
+  store.commit('setAllData', response.data);
   //仮
   // store.state.allData[0].show = false;
   // store.state.allData[1].show = false;
