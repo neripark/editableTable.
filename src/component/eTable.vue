@@ -45,10 +45,6 @@ export default{
   },
   methods: {
     showChbGp(data, e){
-      console.log(e.currentTarget.parentElement.offsetWidth);
-
-      console.log('------');
-
       this.popOverShowFlg = !(this.popOverShowFlg);
       const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
       this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
@@ -60,21 +56,21 @@ export default{
 </script>
 
 <style lang="scss">
-  #eTable{
-    position: relative;
-    th{
-      &.filterOn{ //フィルタpopoverが呼ばれたthに色をつける
-        color: #52bd7e;
-      }
-      .filterCol{
-        box-sizing: border-box;
-        display: inline-block;
-        .glyphicon-filter:before{
-          //フィルタアイコンの大きさ調整
-          font-size: 0.8em;
-          padding-left: 0.4em;
-        }
+#eTable{
+  position: relative;
+  th{
+    &.filterOn{ //フィルタpopoverが呼ばれたthに色をつける
+      color: #52bd7e;
+    }
+    .filterCol{
+      box-sizing: border-box;
+      display: inline-block;
+      .glyphicon-filter:before{
+        //フィルタアイコンの大きさ調整
+        font-size: 0.8em;
+        padding-left: 0.4em;
       }
     }
   }
+}
 </style>
