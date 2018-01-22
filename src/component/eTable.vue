@@ -5,12 +5,12 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Guest</th>
-          <th scope="col" @click="showChbGp(dataA, $event)" :class="{'filterOn': selected}">
-            <span class="filterCol">{{dataA}}</span>
+          <th scope="col" @click="showChbGp($event)" :class="{'filterOn': selected}">
+            <span class="filterCol">Host</span>
             <span class="glyphicon glyphicon-filter"></span>
           </th>
-          <th scope="col" @click="showChbGp(dataB, $event)" :class="{'filterOn': selected}">
-            <span class="filterCol">{{dataB}}</span>
+          <th scope="col" @click="showChbGp($event)" :class="{'filterOn': selected}">
+            <span class="filterCol">Guest</span>
             <span class="glyphicon glyphicon-filter"></span>
           </th>
         </tr>
@@ -27,8 +27,6 @@ import popOver from './popOver.vue'
 export default{
   data: function() {
     return {
-      dataA: "Host",
-      dataB: "Guest",
       popOverShowFlg: false,
       right: 0,
       selected: false
@@ -43,11 +41,11 @@ export default{
     eTableRow, popOver
   },
   methods: {
-    showChbGp(data, e){
-      this.popOverShowFlg = !(this.popOverShowFlg);
+    showChbGp(e){
       const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
       this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
       this.selected = !(this.selected);
+      this.popOverShowFlg = !(this.popOverShowFlg);
     }
   }
 }

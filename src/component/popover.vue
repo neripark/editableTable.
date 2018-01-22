@@ -4,9 +4,7 @@
     <div class="popover-content">
       <div class="chbArea">
         <div class="checkbox" v-for="(item) in allHosts" :key="item.key">
-          <label>
-            <input type="checkbox" checked>{{item.hostName}}
-          </label>
+          <label><input type="checkbox" checked>{{item.hostName}}</label>
         </div>
       </div>
     </div>
