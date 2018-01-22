@@ -2,10 +2,12 @@
   <div v-show="showFlg" class="popover bottom">
     <div class="arrow" :style="arrowStyle"></div>
     <div class="popover-content">
-      <p class="lead">This is lead text. </p>
       <div class="chbArea">
-        <p>{{vl}}</p>
-        <label><input type="checkbox">テスト</label>
+        <div class="checkbox" v-for="(item) in allHosts" :key="item.key">
+          <label>
+            <input type="checkbox" checked>{{item.hostName}}
+          </label>
+        </div>
       </div>
     </div>
   </div>
@@ -13,12 +15,15 @@
 
 <script>
 export default {
-  props: ['showFlg', 'right', 'vl'],
+  props: ['showFlg', 'right'],
   computed: {
     arrowStyle: function(){
       return {
           'right': `${this.right}px`
       }
+    },
+    allHosts: function(){
+      return this.$store.state.allHosts
     }
   }
 }
@@ -34,6 +39,10 @@ export default {
   &.bottom > .arrow{
     margin-left: 0;
     left: auto;
+  }
+  .checkbox{
+    display: inline-block;
+    margin-right: 15px;
   }
 }
 </style>

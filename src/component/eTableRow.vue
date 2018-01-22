@@ -13,6 +13,11 @@
 import eventHub from '../hub.js';
 export default {
   props: ['rows'],
+  computed: {
+    allHosts: function(){
+      return this.$store.state.allData
+    }
+  },
   methods: {
     triggerToast: function (index){
       eventHub.$emit('showToast', this.rows[index]);

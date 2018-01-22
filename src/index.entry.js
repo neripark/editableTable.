@@ -15,7 +15,8 @@ Vue.component('toast', toast);
 const store = new Vuex.Store({
   state: {
     allData: {},
-    allStatus: {}
+    allStatus: {},
+    allHosts: {}
   },
   mutations:{
     saveAllData(tmp){
@@ -37,6 +38,10 @@ Axios.get('/api/selectAll.php')
 Axios.get('/api/selectAllStatus.php')
 .then(response => {
   store.state.allStatus = response.data;
+});
+Axios.get('/api/selectAllHosts.php')
+.then(response => {
+  store.state.allHosts = response.data;
 });
 
 //インスタンス化

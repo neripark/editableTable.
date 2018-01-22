@@ -17,7 +17,7 @@
       </thead>
       <eTableRow :rows="rowsAll"></eTableRow>
     </table>
-    <popOver :showFlg="popOverShowFlg" :right="right" :vl="vv"></popOver>
+    <popOver :showFlg="popOverShowFlg" :right="right"></popOver>
   </div>
 </template>
 
@@ -31,7 +31,6 @@ export default{
       dataB: "Guest",
       popOverShowFlg: false,
       right: 0,
-      vv: "string",
       selected: false
     };
   },
@@ -48,7 +47,6 @@ export default{
       this.popOverShowFlg = !(this.popOverShowFlg);
       const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
       this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
-      this.vv = data;
       this.selected = !(this.selected);
     }
   }
