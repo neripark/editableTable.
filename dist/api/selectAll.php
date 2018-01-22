@@ -11,7 +11,7 @@ $selectSql = "SELECT
  G.guestGroup,
  G.statusId,
  S.status,
- G.showDefault
+ true as 'showDefault'
  FROM `TrnGuestInfo` G
  LEFT OUTER JOIN `MstStatus` S
  ON G.statusId = S.statusId;
@@ -30,7 +30,7 @@ try {
    'guestGroup'=>$row['guestGroup'],
    'statusId'=>$row['statusId'],
    'status'=>$row['status'],
-   'showDefault'=>$row['showDefault']
+   'showDefault'=>(bool)$row['showDefault']
    );
  }
 

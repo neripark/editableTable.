@@ -1,8 +1,8 @@
-CREATE TABLE `trnguestinfo` (
-  `guestId` char(4) NOT NULL,
-  `guestName` varchar(30) DEFAULT NULL,
-  `hostName` varchar(30) CHARACTER SET utf32 DEFAULT NULL,
-  `guestGroup` varchar(30) DEFAULT NULL,
-  `statusId` char(2) DEFAULT NULL,
-  `showDefault` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `test`.`TrnGuestInfo`
+( `guestId` CHAR(4) NOT NULL ,
+  `guestName` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+  `hostName` VARCHAR(30) CHARACTER SET utf32 COLLATE utf32_general_ci NULL ,
+  `guestGroup` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+  `statusId` CHAR(2) NULL ,
+  PRIMARY KEY (`guestId`(4)))
+ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
