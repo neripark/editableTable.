@@ -1,10 +1,10 @@
 //let ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = [
   {
     // context: __dirname + '/src',
     entry: {
-      editableTable: "./src/index.entry.js",
-      test: "./src/test.entry.js"
+      editableTable: "./src/index.entry.js"
     },
     output: {
       path: __dirname + '/dist',
@@ -49,9 +49,18 @@ module.exports = [
             name: '[name].[ext]',
             outputPath: './assets/'
           }
+        },
+        {
+          test: /\.html$/,
+          loader: "html-loader"
         }
       ]
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "src/index.html"
+      })
+    ],
     resolve: {
       alias: {
         vue: 'vue/dist/vue.esm.js'
