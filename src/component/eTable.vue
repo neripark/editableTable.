@@ -15,7 +15,7 @@
           </th>
         </tr>
       </thead>
-      <eTableRow :rows="rowsAll"></eTableRow>
+      <eTableRow></eTableRow>
     </table>
     <popOver :showFlg="popOverShowFlg" :right="right"></popOver>
   </div>
