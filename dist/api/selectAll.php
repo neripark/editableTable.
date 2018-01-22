@@ -10,7 +10,8 @@ $selectSql = "SELECT
  G.hostName,
  G.guestGroup,
  G.statusId,
- S.status
+ S.status,
+ G.showDefault
  FROM `TrnGuestInfo` G
  LEFT OUTER JOIN `MstStatus` S
  ON G.statusId = S.statusId;
@@ -28,7 +29,8 @@ try {
    'hostName'=>$row['hostName'],
    'guestGroup'=>$row['guestGroup'],
    'statusId'=>$row['statusId'],
-   'status'=>$row['status']
+   'status'=>$row['status'],
+   'showDefault'=>$row['showDefault']
    );
  }
 
