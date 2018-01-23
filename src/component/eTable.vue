@@ -10,7 +10,7 @@
             <span class="glyphicon glyphicon-filter"></span>
           </th>
           <th scope="col" @click="showChbGp($event)" :class="{'filterOn': selected}">
-            <span class="filterCol">Guest</span>
+            <span class="filterCol">Status</span>
             <span class="glyphicon glyphicon-filter"></span>
           </th>
         </tr>
