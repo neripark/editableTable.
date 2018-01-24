@@ -4,7 +4,7 @@ require_once("pdo.php");
 /************************
 sql
 *************************/
-$selectSql = "SELECT * FROM MstStatus ORDER BY statusId;";
+$selectSql = "SELECT status as 'name' FROM MstStatus ORDER BY statusId;";
 
 /************************
 実行
@@ -13,8 +13,7 @@ try {
  $response = $pdo->query($selectSql);
  while($row = $response->fetch(PDO::FETCH_ASSOC)){
    $userData[]=array(
-   'statusId'=>$row['statusId'],
-   'status'=>$row['status']
+   'name'=>$row['name']
    );
  }
 

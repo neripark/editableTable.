@@ -4,7 +4,7 @@ require_once("pdo.php");
 /************************
 sql
 *************************/
-$selectSql = "SELECT hostName as 'hostName' FROM TrnGuestInfo GROUP BY hostName;";
+$selectSql = "SELECT hostName as 'name' FROM TrnGuestInfo GROUP BY hostName;";
 
 /************************
 実行
@@ -13,7 +13,7 @@ try {
  $response = $pdo->query($selectSql);
  while($row = $response->fetch(PDO::FETCH_ASSOC)){
    $userData[]=array(
-   'hostName'=>$row['hostName']
+   'name'=>$row['name']
    );
  }
 

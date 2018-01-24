@@ -15,12 +15,18 @@ Vue.component('toast', toast);
 let store = new Vuex.Store({
   state: {
     allData: [],
-    allStatus: [],
-    allHosts: []
+    allHost: [],
+    allStatus: []
   },
   mutations:{
     setAllData(state, obj){
       state.allData = obj;
+    },
+    setHost(state, obj){
+      state.allHost = obj;
+    },
+    setStatus(state, obj){
+      state.allStatus = obj;
     }
   },
   actions:{
@@ -44,13 +50,13 @@ Axios.get('/api/selectAll.php')
   // store.state.allData[1].show = false;
   // store.state.allData[5].show = false;
 });
-Axios.get('/api/selectAllStatus.php')
-.then(response => {
-  store.state.allStatus = response.data;
-});
 Axios.get('/api/selectAllHosts.php')
 .then(response => {
-  store.state.allHosts = response.data;
+  store.commit('setHost', response.data);
+});
+Axios.get('/api/selectAllStatus.php')
+.then(response => {
+  store.commit('setStatus', response.data);
 });
 
 //インスタンス化

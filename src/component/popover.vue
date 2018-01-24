@@ -3,8 +3,8 @@
     <div class="arrow" :style="arrowStyle"></div>
     <div class="popover-content">
       <div class="chbArea">
-        <div class="checkbox" v-for="(item) in allHosts" :key="item.key">
-          <label><input type="checkbox" checked>{{item.hostName}}</label>
+        <div class="checkbox" v-for="(item) in options" :key="item.key">
+          <label><input type="checkbox" checked>{{item.name}}</label>
         </div>
       </div>
     </div>
@@ -13,15 +13,15 @@
 
 <script>
 export default {
-  props: ['showFlg', 'right'],
+  props: ['showFlg', 'right', 'headTxt'],
   computed: {
     arrowStyle: function(){
       return {
           'right': `${this.right}px`
       }
     },
-    allHosts: function(){
-      return this.$store.state.allHosts
+    options: function(){
+      return this.$store.state[`all${this.headTxt}`];
     }
   }
 }
