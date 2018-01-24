@@ -1,13 +1,16 @@
 <template lang="html">
-  <div v-show="showFlg" class="popover bottom">
-    <div class="arrow" :style="arrowStyle"></div>
-    <div class="popover-content">
-      <div class="chbArea">
-        <div class="checkbox" v-for="(item) in options" :key="item.key">
-          <label><input type="checkbox" checked>{{item.name}}</label>
+  <div v-show="showFlg">
+    <div class="popover bottom">
+      <div class="arrow" :style="arrowStyle"></div>
+      <div class="popover-content">
+        <div class="chbArea">
+          <div class="checkbox" v-for="(item) in options" :key="item.key">
+            <label><input type="checkbox" checked>{{item.name}}</label>
+          </div>
         </div>
       </div>
     </div>
+    <div class="overlay"></div>
   </div>
 </template>
 
@@ -42,5 +45,15 @@ export default {
     display: inline-block;
     margin-right: 15px;
   }
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1059;
+  //background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(255, 255, 255, .5);
 }
 </style>
