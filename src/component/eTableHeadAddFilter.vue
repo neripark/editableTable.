@@ -36,24 +36,19 @@ export default {
 
 <style lang="scss">
   th{
-    &.filterOn{ //フィルタpopoverが呼ばれたthに色をつける
-      color: #52bd7e;
-    }
+    // &.filterOn{ //フィルタpopoverが呼ばれたthに色をつける
+    //   color: #52bd7e;
+    // }
     &.poOn > span{
       position: relative;
       z-index: 1055;
     }
-    .filterCol{
-      box-sizing: border-box;
-      display: inline-block;
-      .glyphicon-filter:before{
-        //フィルタアイコンの大きさ調整
-        font-size: 0.8em;
-        padding-left: 0.4em;
-      }
+    .glyphicon-filter:before{
+      //フィルタアイコンの大きさ調整
+      font-size: 0.8em;
     }
     .glyphicon{
-    	//後続のglyphiconの.overlayとの重なり順がTransition中だけおかしくなるためbootstrapクラスを上書き
+    	//後続のglyphiconの重なり順がpopoverのTransition中だけおかしくなるためbootstrapクラスを上書き
     	position: static;
     	top: 0;
     }

@@ -63,7 +63,7 @@ export default {
   width: 100vw;
   height: 100vh;
   z-index: 1050;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .8);
 }
 //transition
 .v-enter-active, .v-leave-active {
