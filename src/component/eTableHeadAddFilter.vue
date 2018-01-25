@@ -1,8 +1,8 @@
 <template lang="html">
-  <th scope="col" @click="showPopover($event)" :class="{poOn:popoverStyleFlg}">
+  <th scope="col" @click="showPo($event)" :class="{poOn:poStyleFlg}">
     <span class="filterCol">{{headTxt}}</span>
     <span class="glyphicon glyphicon-filter"></span>
-    <popover :showFlg="popoverShowFlg" :right="right" :headTxt="headTxt" @poToggle="poToggleStyle"></popover>
+    <popover :showFlg="poShowFlg" :right="right" :headTxt="headTxt" @poToggle="poToggleStyle"></popover>
   </th>
 </template>
 
@@ -12,8 +12,8 @@ export default {
   props: ['headTxt'],
   data: function(){
     return {
-      popoverShowFlg: false,
-      popoverStyleFlg: false,
+      poShowFlg: false,
+      poStyleFlg: false,
       right: 0,
     }
   },
@@ -21,14 +21,14 @@ export default {
     popover
   },
   methods: {
-    showPopover(e){
+    showPo(e){
       const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
       this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
       this.selected = !(this.selected);
-      this.popoverShowFlg = !(this.popoverShowFlg);
+      this.poShowFlg = !(this.poShowFlg);
     },
     poToggleStyle(bool){ //popoverのtransition前後で発火
-      this.popoverStyleFlg = bool;
+      this.poStyleFlg = bool;
     }
   }
 }
