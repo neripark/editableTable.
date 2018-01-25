@@ -27,12 +27,31 @@ let store = new Vuex.Store({
     },
     setStatus(state, obj){
       state.allStatus = obj;
+    },
+    updateShowFlg(state, payload){
+      //console.log(state.allData[payload.index].show);
+      state.allData[payload.index].show = payload.value;
     }
   },
   actions:{
-    // getAllData(){
-    //
-    // }
+    toggleShowHost(context, obj){
+      // console.log(context);
+      // console.log(obj.headTxt);
+      // console.log(obj.headTxt.toLowerCase());
+      // console.log(obj.value);
+      // console.log(obj.checked);
+      // console.log(context);
+      // context.state[`all${obj.headTxt}`].forEach(function(arr){
+      context.state.allData.forEach(function(arr,index){
+        if(arr[`${obj.headTxt.toLowerCase()}Name`] === obj.value){
+          //console.log(arr.guestName);
+          console.log(index);
+          let commitObj = {"index": index, "value": obj.checked};//id, boolean
+          context.commit('updateShowFlg', commitObj);
+        }
+      });
+      console.log('------------------');
+    }
   },
   getters: {
     onlyShowData: state => {
@@ -53,6 +72,9 @@ Axios.get('/api/selectAll.php')
 Axios.get('/api/selectAllHosts.php')
 .then(response => {
   store.commit('setHost', response.data);
+  // store.state.allHost[4].show = false;
+  // store.state.allHost[6].show = false;
+  // store.state.allHost[7].show = false;
 });
 Axios.get('/api/selectAllStatus.php')
 .then(response => {

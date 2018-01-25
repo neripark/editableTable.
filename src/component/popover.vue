@@ -5,8 +5,8 @@
         <div class="arrow" :style="arrowStyle"></div>
         <div class="popover-content">
           <div class="chbArea">
-            <div class="checkbox" v-for="(item) in options" :key="item.key">
-              <label><input type="checkbox" checked>{{item.name}}</label>
+            <div class="checkbox" v-for="(item, index) in options" :key="item.key">
+              <label><input type="checkbox" :checked="item.show" @change="ckbChange((index), $event)" :value="item.name">{{item.name}}</label>
             </div>
           </div>
         </div>
@@ -35,6 +35,14 @@ export default {
     },
     afterLeave(){
       this.$emit('poToggle', false);
+    },
+    ckbChange(index, e){
+      // console.log(e.currentTarget.value);
+      // console.log(e.currentTarget.checked);//変更後の値が取れる
+      // console.log(index);
+      // console.log('------------------');
+      const obj = {"headTxt": this.headTxt, "value": e.currentTarget.value, "checked": e.currentTarget.checked};
+      this.$store.dispatch('toggleShowHost', obj);
     }
   }
 }

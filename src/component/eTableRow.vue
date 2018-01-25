@@ -4,7 +4,7 @@
       <th scope="row">{{ index + 1 }}</th>
       <td>{{ item.guestName }}</td>
       <td>{{ item.hostName }}</td>
-      <td>{{ item.status }}</td>
+      <td>{{ item.statusName }}</td>
     </tr>
   </tbody>
 </template>

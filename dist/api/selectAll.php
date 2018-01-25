@@ -10,7 +10,7 @@ $selectSql = "SELECT
  G.hostName,
  G.guestGroup,
  G.statusId,
- S.status,
+ S.status as 'statusName',
  true as 'show'
  FROM `TrnGuestInfo` G
  LEFT OUTER JOIN `MstStatus` S
@@ -29,7 +29,7 @@ try {
    'hostName'=>$row['hostName'],
    'guestGroup'=>$row['guestGroup'],
    'statusId'=>$row['statusId'],
-   'status'=>$row['status'],
+   'statusName'=>$row['statusName'],
    'show'=>(bool)$row['show']
    );
  }
