@@ -1,17 +1,19 @@
 <template lang="html">
-  <div v-show="showFlg">
-    <div class="popover bottom">
-      <div class="arrow" :style="arrowStyle"></div>
-      <div class="popover-content">
-        <div class="chbArea">
-          <div class="checkbox" v-for="(item) in options" :key="item.key">
-            <label><input type="checkbox" checked>{{item.name}}</label>
+  <transition>
+    <div v-show="showFlg">
+      <div class="popover bottom">
+        <div class="arrow" :style="arrowStyle"></div>
+        <div class="popover-content">
+          <div class="chbArea">
+            <div class="checkbox" v-for="(item) in options" :key="item.key">
+              <label><input type="checkbox" checked>{{item.name}}</label>
+            </div>
           </div>
         </div>
       </div>
+      <div class="overlay"></div>
     </div>
-    <div class="overlay"></div>
-  </div>
+   </transition>
 </template>
 
 <script>
@@ -53,7 +55,13 @@ export default {
   width: 100vw;
   height: 100vh;
   z-index: 1059;
-  //background-color: rgba(0, 0, 0, 0);
   background-color: rgba(255, 255, 255, .5);
+}
+//transition
+.v-enter-active, .v-leave-active {
+  transition: opacity .3s;
+}
+.v-enter, .v-leave-to {
+  opacity: 0;
 }
 </style>
