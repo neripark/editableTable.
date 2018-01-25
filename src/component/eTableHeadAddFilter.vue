@@ -52,5 +52,10 @@ export default {
         padding-left: 0.4em;
       }
     }
+    .glyphicon{
+    	//後続のglyphiconの.overlayとの重なり順がTransition中だけおかしくなるためbootstrapクラスを上書き
+    	position: static;
+    	top: 0;
+    }
   }
 </style>
