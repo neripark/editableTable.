@@ -31,10 +31,10 @@ export default {
   },
   methods: {
     beforeEnter(){
-      console.log('start!');
+      this.$emit('poToggle', true);
     },
     afterLeave(){
-      console.log('end!');
+      this.$emit('poToggle', false);
     }
   }
 }
@@ -62,7 +62,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1059;
+  z-index: 1050;
   background-color: rgba(255, 255, 255, .5);
 }
 //transition

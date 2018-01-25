@@ -1,8 +1,8 @@
 <template lang="html">
-  <th scope="col" @click="showPopover($event)">
+  <th scope="col" @click="showPopover($event)" :class="{poOn:popoverStyleFlg}">
     <span class="filterCol">{{headTxt}}</span>
     <span class="glyphicon glyphicon-filter"></span>
-    <popover :showFlg="popoverShowFlg" :right="right" :headTxt="headTxt"></popover>
+    <popover :showFlg="popoverShowFlg" :right="right" :headTxt="headTxt" @poToggle="poToggleStyle"></popover>
   </th>
 </template>
 
@@ -13,6 +13,7 @@ export default {
   data: function(){
     return {
       popoverShowFlg: false,
+      popoverStyleFlg: false,
       right: 0,
     }
   },
@@ -25,6 +26,9 @@ export default {
       this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
       this.selected = !(this.selected);
       this.popoverShowFlg = !(this.popoverShowFlg);
+    },
+    poToggleStyle(bool){ //popoverのtransition前後で発火
+      this.popoverStyleFlg = bool;
     }
   }
 }
@@ -34,6 +38,10 @@ export default {
   th{
     &.filterOn{ //フィルタpopoverが呼ばれたthに色をつける
       color: #52bd7e;
+    }
+    &.poOn > span{
+      position: relative;
+      z-index: 1055;
     }
     .filterCol{
       box-sizing: border-box;
