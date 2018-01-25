@@ -59,6 +59,14 @@ const store = new Vuex.Store({
   getters: {
     onlyShowData: state => {
       return state.allData.filter(record => record.show);
+    },
+    // onlyNonCheckedData: state => headTxt => {
+    //   return state[`all${headTxt}`].filter(record => record.show);
+    // }
+    onlyNonCheckedData: function(state){
+      return function(headTxt){
+        return state[`all${headTxt}`].filter(record => !(record.show));
+      }
     }
   }
 });

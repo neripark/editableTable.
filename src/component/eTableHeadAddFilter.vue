@@ -1,7 +1,7 @@
 <template lang="html">
   <th scope="col" @click="showPo($event)" :class="{poOn:poStyleFlg}">
     <span class="filterCol">{{headTxt}}</span>
-    <span class="glyphicon glyphicon-filter"></span>
+    <span class="glyphicon glyphicon-filter" :class="{filterOn:filterOnFlg}"></span>
     <popover :showFlg="poShowFlg" :right="right" :headTxt="headTxt" @poToggle="poToggleStyle"></popover>
   </th>
 </template>
@@ -20,6 +20,12 @@ export default {
   components: {
     popover
   },
+  computed:{
+    filterOnFlg(){
+      const cntFalse = this.$store.getters.onlyNonCheckedData(this.headTxt).length;
+      return Boolean(cntFalse);
+    }
+  },
   methods: {
     showPo(e){
       const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
@@ -36,16 +42,18 @@ export default {
 
 <style lang="scss">
   th{
-    // &.filterOn{ //フィルタpopoverが呼ばれたthに色をつける
-    //   color: #52bd7e;
-    // }
     &.poOn > span{
       position: relative;
       z-index: 1055;
     }
-    .glyphicon-filter:before{
-      //フィルタアイコンの大きさ調整
-      font-size: 0.8em;
+    .glyphicon-filter{
+      &.filterOn{ //フィルタpopoverが呼ばれたthに色をつける
+        color: #52bd7e;
+      }
+      &:before{
+        //フィルタアイコンの大きさ調整
+        font-size: 0.8em;
+      }
     }
     .glyphicon{
     	//後続のglyphiconの重なり順がpopoverのTransition中だけおかしくなるためbootstrapクラスを上書き
