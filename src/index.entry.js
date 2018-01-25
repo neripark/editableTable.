@@ -12,7 +12,7 @@ Vue.component('etable', eTableComponent);
 Vue.component('toast', toast);
 
 //store
-let store = new Vuex.Store({
+const store = new Vuex.Store({
   state: {
     allData: [],
     allHost: [],
@@ -29,28 +29,31 @@ let store = new Vuex.Store({
       state.allStatus = obj;
     },
     updateShowFlg(state, payload){
-      //console.log(state.allData[payload.index].show);
       state.allData[payload.index].show = payload.value;
+    },
+    updateCheckBoxOnOff(state, payload){
+      state[`all${payload.headTxt}`][payload.index].show = payload.value;
     }
   },
   actions:{
-    toggleShowHost(context, obj){
-      // console.log(context);
-      // console.log(obj.headTxt);
-      // console.log(obj.headTxt.toLowerCase());
-      // console.log(obj.value);
-      // console.log(obj.checked);
-      // console.log(context);
-      // context.state[`all${obj.headTxt}`].forEach(function(arr){
+    toggleShow(context, obj){
+      //テーブルレコードのフィルタ処理をcommit
       context.state.allData.forEach(function(arr,index){
         if(arr[`${obj.headTxt.toLowerCase()}Name`] === obj.value){
-          //console.log(arr.guestName);
-          console.log(index);
-          let commitObj = {"index": index, "value": obj.checked};//id, boolean
-          context.commit('updateShowFlg', commitObj);
+          let commitObjAll = {
+            "index": index,
+            "value": obj.checked
+          };
+          context.commit('updateShowFlg', commitObjAll);
         }
       });
-      console.log('------------------');
+      //チェックボックスの状態を更新処理をcommit
+      const commitObjChb = {
+        "index": obj.chbIndex,
+        "value": obj.checked,
+        "headTxt": obj.headTxt
+      };
+      context.commit('updateCheckBoxOnOff', commitObjChb);
     }
   },
   getters: {
