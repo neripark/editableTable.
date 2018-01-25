@@ -1,5 +1,5 @@
 <template lang="html">
-  <transition>
+  <transition @before-enter="beforeEnter" @after-leave="afterLeave">
     <div v-show="showFlg">
       <div class="popover bottom">
         <div class="arrow" :style="arrowStyle"></div>
@@ -27,6 +27,14 @@ export default {
     },
     options: function(){
       return this.$store.state[`all${this.headTxt}`];
+    }
+  },
+  methods: {
+    beforeEnter(){
+      console.log('start!');
+    },
+    afterLeave(){
+      console.log('end!');
     }
   }
 }
