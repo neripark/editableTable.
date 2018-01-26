@@ -20,12 +20,12 @@
 export default {
   props: ['showFlg', 'right', 'headTxt'],
   computed: {
-    arrowStyle: function(){
+    arrowStyle(){
       return {
           'right': `${this.right}px`
       }
     },
-    options: function(){
+    options(){
       return this.$store.state[`all${this.headTxt}`];
     }
   },

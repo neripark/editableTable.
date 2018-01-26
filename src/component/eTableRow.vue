@@ -13,12 +13,12 @@
 import eventHub from '../hub.js';
 export default {
   computed: {
-    onlyShowDatas: function(){
+    onlyShowDatas(){
       return this.$store.getters.onlyShowData;
     }
   },
   methods: {
-    triggerToast: function (index){
+    triggerToast(index){
       eventHub.$emit('showToast', this.onlyShowDatas[index]);
     }
   }

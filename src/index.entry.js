@@ -19,14 +19,14 @@ const store = new Vuex.Store({
     allStatus: []
   },
   mutations:{
-    setAllData(state, obj){
-      state.allData = obj;
+    setAllData(state, payload){
+      state.allData = payload;
     },
-    setHost(state, obj){
-      state.allHost = obj;
+    setHost(state, payload){
+      state.allHost = payload;
     },
-    setStatus(state, obj){
-      state.allStatus = obj;
+    setStatus(state, payload){
+      state.allStatus = payload;
     },
     updateShowFlg(state, payload){
       state.allData[payload.index].show = payload.value;
@@ -60,13 +60,8 @@ const store = new Vuex.Store({
     onlyShowData: state => {
       return state.allData.filter(record => record.show);
     },
-    // onlyNonCheckedData: state => headTxt => {
-    //   return state[`all${headTxt}`].filter(record => record.show);
-    // }
-    onlyNonCheckedData: function(state){
-      return function(headTxt){
-        return state[`all${headTxt}`].filter(record => !(record.show));
-      }
+    onlyNonCheckedData: state => headTxt => {
+      return state[`all${headTxt}`].filter(record => !(record.show));
     }
   }
 });
@@ -83,9 +78,6 @@ Axios.get('/api/selectAll.php')
 Axios.get('/api/selectAllHosts.php')
 .then(response => {
   store.commit('setHost', response.data);
-  // store.state.allHost[4].show = false;
-  // store.state.allHost[6].show = false;
-  // store.state.allHost[7].show = false;
 });
 Axios.get('/api/selectAllStatus.php')
 .then(response => {
