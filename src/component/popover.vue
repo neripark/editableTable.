@@ -48,11 +48,11 @@ export default {
       this.$emit('poToggle', false);
     },
     chbChange(index, e){
-      const obj = {
+      let obj = {
         "headTxt": this.headTxt,
-        "value": e.currentTarget.value,
-        "checked": e.currentTarget.checked,
-        "chbIndex": index
+        "label": e.currentTarget.value,
+        "value": e.currentTarget.checked,//bool
+        "index": index
       };
       this.$store.dispatch('toggleShow', obj);
     },

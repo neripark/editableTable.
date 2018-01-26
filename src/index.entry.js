@@ -21,47 +21,40 @@ const store = new Vuex.Store({
   },
 
   mutations:{
-    setAllData(state, payload){
-      state.allData = payload;
-    },
-    setHost(state, payload){
-      state.allHost = payload;
-    },
-    setStatus(state, payload){
-      state.allStatus = payload;
-    },
+
+    /* onload */
+    setAllData(state, payload){state.allData = payload;},
+    setHost(state, payload){state.allHost = payload;},
+    setStatus(state, payload){state.allStatus = payload;},
+
+    /* event */
     updateShowFlg(state, payload){
-      state.allData[payload.index].show = payload.value;
+      state.allData[payload.tableRecordIndex].show = payload.value;
     },
+
     bulkUpdateShowFlg(state, val){
       state.allData.forEach((arr, index) => {
          state.allData[index].show = val;
       });
     },
+
     updateCheckBoxOnOff(state, payload){
       state[`all${payload.headTxt}`][payload.index].show = payload.value;
     }
+
   },
 
   actions:{
+
     toggleShow(context, obj){
       //テーブルレコードを更新
       context.state.allData.forEach(function(arr,index){
-        if(arr[`${obj.headTxt.toLowerCase()}Name`] === obj.value){
-          let commitObjAll = {
-            "index": index,
-            "value": obj.checked
-          };
-          context.commit('updateShowFlg', commitObjAll);
+        if(arr[`${obj.headTxt.toLowerCase()}Name`] === obj.label){
+          obj.tableRecordIndex = index;
+          context.commit('updateShowFlg', obj);
         }
       });
-      //チェックボックスの状態を更新
-      const commitObjChb = {
-        "index": obj.chbIndex,
-        "value": obj.checked,
-        "headTxt": obj.headTxt
-      };
-      context.commit('updateCheckBoxOnOff', commitObjChb);
+      context.commit('updateCheckBoxOnOff', obj);
     },
 
     bulkCheck(context, obj){
@@ -90,10 +83,6 @@ const store = new Vuex.Store({
 Axios.get('/api/selectAll.php')
 .then(response => {
   store.commit('setAllData', response.data);
-  //仮
-  // store.state.allData[0].show = false;
-  // store.state.allData[1].show = false;
-  // store.state.allData[5].show = false;
 });
 Axios.get('/api/selectAllHosts.php')
 .then(response => {
