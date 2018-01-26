@@ -4,9 +4,20 @@
       <div class="popover bottom">
         <div class="arrow" :style="arrowStyle"></div>
         <div class="popover-content">
+          <!-- checkbox -->
           <div class="chbArea">
             <div class="checkbox" v-for="(item, index) in options" :key="item.key">
               <label><input type="checkbox" :checked="item.show" @change="chbChange((index), $event)" :value="item.name">{{item.name}}</label>
+            </div>
+          </div>
+          <!-- button -->
+          <div class="buttonArea">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-check"></span></button>
+              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-unchecked"></span></button>
+            </div>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary">OK</button>
             </div>
           </div>
         </div>
@@ -66,6 +77,13 @@ export default {
   .checkbox{
     display: inline-block;
     margin-right: 15px;
+  }
+  .buttonArea{
+    text-align: right;
+    margin: 10px 0 9px;
+    .btn-group:not(:first-of-type){
+      margin-left: 10px;
+    }
   }
 }
 .overlay{

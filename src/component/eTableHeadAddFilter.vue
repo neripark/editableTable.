@@ -44,9 +44,11 @@ export default {
 
 <style lang="scss">
   th{
-    &.poOn > span{
-      position: relative;
-      z-index: 1055;
+    &.poOn{
+      & > .filterCol, & > .glyphicon.glyphicon-filter{
+        position: relative;
+        z-index: 1055;
+      }
     }
     .glyphicon-filter{
       &.filterOn{ //フィルタpopoverが呼ばれたthに色をつける
@@ -56,11 +58,11 @@ export default {
         //フィルタアイコンの大きさ調整
         font-size: 0.8em;
       }
-    }
-    .glyphicon{
-    	//後続のglyphiconの重なり順がpopoverのTransition中だけおかしくなるためbootstrapクラスを上書き
-    	position: static;
-    	top: 0;
+      &.glyphicon{
+        //後続のglyphiconの重なり順がpopoverのTransition中だけおかしくなるためbootstrapクラスを上書き
+        position: static;
+        top: 0;
+      }
     }
   }
 </style>
