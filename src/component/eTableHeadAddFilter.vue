@@ -1,5 +1,5 @@
 <template lang="html">
-  <th scope="col" @click="showPo($event)" :class="{poOn:poStyleFlg}">
+  <th scope="col" @click="showPo" :class="{poOn:poStyleFlg}">
     <span class="filterCol">{{headTxt}}</span>
     <span class="glyphicon glyphicon-filter" :class="{filterOn:filterOnFlg}"></span>
     <popover :showFlg="poShowFlg" :right="right" :headTxt="headTxt" @poToggle="poTransitionStyleToggle" @closePo="closePo"></popover>
@@ -31,6 +31,7 @@ export default {
       const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
       this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
       this.poShowFlg = true;
+      console.log(e.target);
     },
     closePo(){
       this.poShowFlg = false;
