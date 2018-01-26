@@ -13,11 +13,13 @@ Vue.component('toast', toast);
 
 //store
 const store = new Vuex.Store({
+
   state: {
     allData: [],
     allHost: [],
     allStatus: []
   },
+
   mutations:{
     setAllData(state, payload){
       state.allData = payload;
@@ -31,13 +33,19 @@ const store = new Vuex.Store({
     updateShowFlg(state, payload){
       state.allData[payload.index].show = payload.value;
     },
+    bulkUpdateShowFlg(state, val){
+      state.allData.forEach((arr, index) => {
+         state.allData[index].show = val;
+      });
+    },
     updateCheckBoxOnOff(state, payload){
       state[`all${payload.headTxt}`][payload.index].show = payload.value;
     }
   },
+
   actions:{
     toggleShow(context, obj){
-      //テーブルレコードのフィルタ処理をcommit
+      //テーブルレコードを更新
       context.state.allData.forEach(function(arr,index){
         if(arr[`${obj.headTxt.toLowerCase()}Name`] === obj.value){
           let commitObjAll = {
@@ -47,15 +55,27 @@ const store = new Vuex.Store({
           context.commit('updateShowFlg', commitObjAll);
         }
       });
-      //チェックボックスの状態を更新処理をcommit
+      //チェックボックスの状態を更新
       const commitObjChb = {
         "index": obj.chbIndex,
         "value": obj.checked,
         "headTxt": obj.headTxt
       };
       context.commit('updateCheckBoxOnOff', commitObjChb);
+    },
+
+    bulkCheck(context, obj){
+      //テーブルレコードを更新
+      context.commit('bulkUpdateShowFlg', obj.value);
+      //チェックボックスの状態を更新
+      context.state[`all${obj.headTxt}`].forEach(function(arr, index){
+        obj.index = index;
+        context.commit('updateCheckBoxOnOff', obj);
+      });
     }
+
   },
+
   getters: {
     onlyShowData: state => {
       return state.allData.filter(record => record.show);

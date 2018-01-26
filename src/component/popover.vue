@@ -13,11 +13,11 @@
           <!-- button -->
           <div class="buttonArea">
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-check"></span></button>
-              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-unchecked"></span></button>
+              <button type="button" class="btn btn-default" @click.stop="chbBulkCheck(true)"><span class="glyphicon glyphicon-check"></span></button>
+              <button type="button" class="btn btn-default" @click.stop="chbBulkCheck(false)"><span class="glyphicon glyphicon-unchecked"></span></button>
             </div>
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-primary">OK</button>
+              <button type="button" class="btn btn-primary" @click.stop="close">OK</button>
             </div>
           </div>
         </div>
@@ -55,6 +55,10 @@ export default {
         "chbIndex": index
       };
       this.$store.dispatch('toggleShow', obj);
+    },
+    chbBulkCheck(bool){
+      //dispatchの引数はひとつしか渡せない→複数渡したい場合は必然的にオブジェクト形式。
+      this.$store.dispatch('bulkCheck', {"headTxt": this.headTxt, "value": bool});
     },
     close(){
       this.$emit('closePo');
