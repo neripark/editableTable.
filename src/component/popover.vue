@@ -11,7 +11,7 @@
           </div>
         </div>
       </div>
-      <div class="overlay"></div>
+      <div class="overlay" @click.stop="close"></div>
     </div>
    </transition>
 </template>
@@ -44,6 +44,9 @@ export default {
         "chbIndex": index
       };
       this.$store.dispatch('toggleShow', obj);
+    },
+    close(){
+      this.$emit('closePo');
     }
   }
 }

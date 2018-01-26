@@ -2,7 +2,7 @@
   <th scope="col" @click="showPo($event)" :class="{poOn:poStyleFlg}">
     <span class="filterCol">{{headTxt}}</span>
     <span class="glyphicon glyphicon-filter" :class="{filterOn:filterOnFlg}"></span>
-    <popover :showFlg="poShowFlg" :right="right" :headTxt="headTxt" @poToggle="poToggleStyle"></popover>
+    <popover :showFlg="poShowFlg" :right="right" :headTxt="headTxt" @poToggle="poToggleStyle" @closePo="closePo"></popover>
   </th>
 </template>
 
@@ -30,8 +30,10 @@ export default {
     showPo(e){
       const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
       this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
-      this.selected = !(this.selected);
-      this.poShowFlg = !(this.poShowFlg);
+      this.poShowFlg = true;
+    },
+    closePo(){
+      this.poShowFlg = false;
     },
     poToggleStyle(bool){ //popoverのtransition前後で発火
       this.poStyleFlg = bool;
