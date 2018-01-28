@@ -29,12 +29,12 @@ const store = new Vuex.Store({
 
     /* event */
     updateShowFlg(state, payload){
-      state.allData[payload.tableRecordIndex].show = payload.value;
+      state.allData[payload.tableRecordIndex][`showFlg_${payload.headTxt}`] = payload.value;
     },
 
-    bulkUpdateShowFlg(state, val){
+    bulkUpdateShowFlg(state, payload){
       state.allData.forEach((arr, index) => {
-         state.allData[index].show = val;
+        state.allData[index][`showFlg_${payload.headTxt}`] = payload.value;
       });
     },
 
@@ -59,7 +59,7 @@ const store = new Vuex.Store({
 
     bulkCheck(context, obj){
       //テーブルレコードを更新
-      context.commit('bulkUpdateShowFlg', obj.value);
+      context.commit('bulkUpdateShowFlg', obj);
       //チェックボックスの状態を更新
       context.state[`all${obj.headTxt}`].forEach(function(arr, index){
         obj.index = index;
@@ -71,7 +71,7 @@ const store = new Vuex.Store({
 
   getters: {
     onlyShowData: state => {
-      return state.allData.filter(record => record.show);
+      return state.allData.filter(record => ((record.showFlg_Status && record.showFlg_Host)));
     },
     onlyNonCheckedData: state => headTxt => {
       return state[`all${headTxt}`].filter(record => !(record.show));
@@ -82,12 +82,19 @@ const store = new Vuex.Store({
 //ストアに初期データセット
 Axios.get('/api/selectAll.php')
 .then(response => {
+  //レスポンスデータにフィルタの数だけフラグをセット
+  Object.keys(response.data).forEach(function(i){
+    this[i].showFlg_Host = true;
+    this[i].showFlg_Status = true;
+  }, response.data);
   store.commit('setAllData', response.data);
 });
+
 Axios.get('/api/selectAllHosts.php')
 .then(response => {
   store.commit('setHost', response.data);
 });
+
 Axios.get('/api/selectAllStatus.php')
 .then(response => {
   store.commit('setStatus', response.data);
