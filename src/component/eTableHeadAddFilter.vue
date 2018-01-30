@@ -28,9 +28,12 @@ export default {
   },
   methods: {
     showPo(e){
+      this.adjustRight(e);
+      this.poShowFlg = true;
+    },
+    adjustRight(e){
       const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
       this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
-      this.poShowFlg = true;
     },
     closePo(){
       this.poShowFlg = false;
