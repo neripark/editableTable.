@@ -31,7 +31,6 @@ export default {
       const offsetCenter = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth) / 2;
       this.right = e.currentTarget.parentElement.offsetWidth - offsetCenter;
       this.poShowFlg = true;
-      console.log(e.target);
     },
     closePo(){
       this.poShowFlg = false;
