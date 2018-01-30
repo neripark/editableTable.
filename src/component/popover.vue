@@ -1,7 +1,7 @@
 <template lang="html">
   <transition @before-enter="beforeEnter" @after-leave="afterLeave">
     <div v-show="showFlg">
-      <div class="popover bottom">
+      <div class="popover bottom" @click.stop>
         <div class="arrow" :style="arrowStyle"></div>
         <div class="popover-content">
           <!-- checkbox -->

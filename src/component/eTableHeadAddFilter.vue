@@ -1,5 +1,5 @@
 <template lang="html">
-  <th scope="col" @click="showPo($event)" :class="{poOn:poStyleFlg}">
+  <th scope="col" @click="showPo" :class="{poOn:poStyleFlg}">
     <span class="filterCol">{{headTxt}}</span>
     <span class="glyphicon glyphicon-filter" :class="{filterOn:filterOnFlg}"></span>
     <popover :showFlg="poShowFlg" :right="right" :headTxt="headTxt" @poToggle="poTransitionStyleToggle" @closePo="closePo"></popover>
