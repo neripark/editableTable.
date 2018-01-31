@@ -15,12 +15,13 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../sass/colors.scss';
 #newRecordButton{
   position: absolute;
   top: 25px;
   right: 10px;
   box-sizing: border-box;
-  background-color: #52bd7e;
+  background-color: $color_partsBase;
   border-radius: 50%;
   p{
     position: relative;

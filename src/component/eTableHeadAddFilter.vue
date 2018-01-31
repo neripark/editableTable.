@@ -46,6 +46,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../sass/colors.scss";
   th{
     &.poOn{
       & > .filterCol, & > .glyphicon.glyphicon-filter{
@@ -55,7 +56,7 @@ export default {
     }
     .glyphicon-filter{
       &.filterOn{ //フィルタpopoverが呼ばれたthに色をつける
-        color: #52bd7e;
+        color: $color_partsBase;
       }
       &:before{
         //フィルタアイコンの大きさ調整
