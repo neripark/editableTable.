@@ -101,7 +101,7 @@ export default {
 }
 //transition
 .v-enter-active, .v-leave-active {
-  transition: opacity .3s;
+  transition: opacity 3s;
 }
 .v-enter, .v-leave-to {
   opacity: 0;

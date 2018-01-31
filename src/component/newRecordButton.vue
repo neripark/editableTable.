@@ -19,13 +19,14 @@ export default {
 @import '../sass/colors.scss';
 #newRecordButton{
   position: absolute;
-  top: 29px;
+  //top: 29px;
+  bottom: 29px;
   right: 10px;
   box-sizing: border-box;
   background-color: $color_partsBase;
   border-radius: 50%;
   p{
-    position: relative;
+    //position: relative;
     width: 40px;
     height: 40px;
     margin: 0;
@@ -36,7 +37,7 @@ export default {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translateX(-50%) translateY(-50%);
+      //transform: translateX(-50%) translateY(-50%);
     }
     &:before{width: 2px; height: 20px;}
     &:after{width: 20px; height: 2px;}
