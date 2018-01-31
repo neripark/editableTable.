@@ -5,18 +5,16 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Prease Edit.</h4>
+          <h4 class="modal-title">{{title}}</h4>
         </div>
         <div class="modal-body">
-          <p>ゲスト：{{ guestName }}</p>
-          <p>ホスト：{{ hostName }}</p>
-          <p>状態：{{ status }}</p>
-          <p>状態ID：{{ statusId }}</p>
-          <p>返答：{{ res }}</p>
+          <p>ゲスト名：{{ guestName }}</p>
+          <p>ホスト名：{{ hostName }}</p>
+          <p>状態：{{ statusName }}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" @click="postEditData()">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+          <button type="button" class="btn btn-primary" @click="postEditData()">{{buttonLabel}}</button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -33,19 +31,32 @@ export default {
   props: ['rowData'],
   data: function(){
     return {
+      title: null,
+      buttonLabel: null,
       guestName: null,
       hostName: null,
-      status: null,
+      statusName: null,
       statusId: null,
       res: ''
     }
   },
   methods: {
     showToast: function(rowData){
-      this.guestName = rowData.guestName;
-      this.hostName = rowData.hostName;
-      this.status = rowData.status;
-      this.statusId = rowData.statusId;
+      if(rowData){
+        this.title = 'ゲスト情報更新';
+        this.buttonLabel = '保存';
+        this.guestName = rowData.guestName;
+        this.hostName = rowData.hostName;
+        this.statusName = rowData.statusName;
+        this.statusId = rowData.statusId;
+      }else{
+        this.title = '新規ゲスト情報追加';
+        this.buttonLabel = '登録';
+        this.guestName = "";
+        this.hostName = "";
+        this.statusName = "";
+        this.statusId = "";
+      }
       $('#toast').modal('toggle');
     },
     postEditData: function(){

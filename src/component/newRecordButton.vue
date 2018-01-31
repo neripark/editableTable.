@@ -1,14 +1,15 @@
 <template lang="html">
   <div id="newRecordButton">
-    <p @click="test"></p>
+    <p @click="triggerToast"></p>
   </div>
 </template>
 
 <script>
+import eventHub from '../hub.js';
 export default {
   methods: {
-    test(){
-      console.log("a new record added.");
+    triggerToast(){
+      eventHub.$emit('showToast')
     }
   }
 }
@@ -18,7 +19,7 @@ export default {
 @import '../sass/colors.scss';
 #newRecordButton{
   position: absolute;
-  top: 25px;
+  top: 29px;
   right: 10px;
   box-sizing: border-box;
   background-color: $color_partsBase;
