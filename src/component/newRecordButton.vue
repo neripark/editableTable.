@@ -24,6 +24,7 @@ export default {
   box-sizing: border-box;
   background-color: $color_partsBase;
   border-radius: 50%;
+  box-shadow: 1px 1px 6px 0px #ccc;
   p{
     position: relative;
     width: 40px;
