@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = [
   {
     entry: {
-      editableTable: "./src/index.entry.js"
+      editableTable: "./src/entry.js"
     },
     output: {
       path: __dirname + '/dist',

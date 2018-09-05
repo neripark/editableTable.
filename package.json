@@ -4,8 +4,6 @@
   "description": "wk_editTable",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "svr": "gulp svr",
     "build": "webpack",
     "watch": "webpack -d --watch"
   },
