@@ -1,8 +1,7 @@
-//let ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = [
   {
-    // context: __dirname + '/src',
     entry: {
       editableTable: "./src/index.entry.js"
     },
@@ -67,27 +66,4 @@ module.exports = [
       }
     }
   }
-  // ,
-  // {
-  //   context: __dirname + '/src',
-  //   entry: {
-  //     style: "./sass/style.scss"
-  //   },
-  //   output: {
-  //     path: __dirname + '/dist',
-  //     filename: "./css/[name].css"
-  //   },
-  //   module: {
-  //     loaders: [
-  //       {
-  //         test: /\.scss$/,
-  //         exclude: /node_modules/,
-  //         loader: ExtractTextPlugin.extract('css-loader!sass-loader')
-  //       }
-  //     ]
-  //   },
-  //   plugins: [
-  //     new ExtractTextPlugin('./css/[name].css')
-  //   ]
-  // }
 ]

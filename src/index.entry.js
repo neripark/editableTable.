@@ -6,7 +6,6 @@ import toast from './component/toast.vue';
 import newRecordButton from './component/newRecordButton.vue';
 import './sass/style.scss';
 import 'bootstrap/dist/js/bootstrap.min.js';
-// import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
 Vue.use(Vuex);
 Vue.component('etable', eTableComponent);
