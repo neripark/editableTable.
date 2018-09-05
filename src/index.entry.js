@@ -82,7 +82,7 @@ const store = new Vuex.Store({
 });
 
 //ストアに初期データセット
-Axios.get('/api/selectAll.php')
+Axios.get('/stub/guestData.json')
 .then(response => {
   //レスポンスデータにフィルタの数だけフラグをセット
   Object.keys(response.data).forEach(function(i){
@@ -92,12 +92,12 @@ Axios.get('/api/selectAll.php')
   store.commit('setAllData', response.data);
 });
 
-Axios.get('/api/selectAllHosts.php')
+Axios.get('/stub/allHosts.json')
 .then(response => {
   store.commit('setHost', response.data);
 });
 
-Axios.get('/api/selectAllStatus.php')
+Axios.get('/stub/allStatus.json')
 .then(response => {
   store.commit('setStatus', response.data);
 });

@@ -1,0 +1,178 @@
+[
+  {
+    "guestId": "0005",
+    "guestName": "\u3088\u306a\u304c\u3064\u3070\u3055",
+    "hostName": "b",
+    "guestGroup": "G1",
+    "statusId": "01",
+    "statusName": "\u672a"
+  },
+  {
+    "guestId": "0006",
+    "guestName": "\u3057\u307e\u3056\u304d\u306e\u3076\u306a\u304c",
+    "hostName": "neri",
+    "guestGroup": "G3",
+    "statusId": "01",
+    "statusName": "\u672a"
+  },
+  {
+    "guestId": "0001",
+    "guestName": "\u304a\u304d\u3042\u3086\u308a\u3087\u3046\u305f\u308d\u3046",
+    "hostName": "neri",
+    "guestGroup": "G3",
+    "statusId": "02",
+    "statusName": "\u56de\u7b54\u5f85\u3061"
+  },
+  {
+    "guestId": "0002",
+    "guestName": "\u3044\u3057\u3060\u3042\u304d\u3089",
+    "hostName": "neri",
+    "guestGroup": "G2",
+    "statusId": "02",
+    "statusName": "\u56de\u7b54\u5f85\u3061"
+  },
+  {
+    "guestId": "0013",
+    "guestName": "\u305f\u3061\u304d\u3075\u307f\u3072\u3053",
+    "hostName": "park",
+    "guestGroup": "G3",
+    "statusId": "02",
+    "statusName": "\u56de\u7b54\u5f85\u3061"
+  },
+  {
+    "guestId": "0003",
+    "guestName": "\u307b\u3057\u305d\u3046\u3044\u3061\u308d\u3046",
+    "hostName": "neri",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0007",
+    "guestName": "\u3075\u304f\u3084\u307e\u3058\u3085\u3093",
+    "hostName": "neri",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0008",
+    "guestName": "\u3055\u304f\u3089\u3044\u305f\u304b\u3072\u308d",
+    "hostName": "neri",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0009",
+    "guestName": "\u306a\u304b\u3080\u3089\u3086\u3046\u3044\u3061",
+    "hostName": "park",
+    "guestGroup": "G2",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0010",
+    "guestName": "\u305b\u304d\u3068\u3082\u304b\u305a",
+    "hostName": "neri",
+    "guestGroup": "G2",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0011",
+    "guestName": "\u3059\u304e\u3084\u307e\u306e\u308a\u3042\u304d",
+    "hostName": "neri",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0014",
+    "guestName": "\u304a\u306e\u3055\u304b\u307e\u3055\u3084",
+    "hostName": "park",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0015",
+    "guestName": "\u304b\u3058\u3086\u3046\u304d",
+    "hostName": "neri",
+    "guestGroup": "G2",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0016",
+    "guestName": "\u3057\u3082\u306e\u3072\u308d",
+    "hostName": "house",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0017",
+    "guestName": "\u3044\u308a\u306e\u307f\u3086",
+    "hostName": "house",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0018",
+    "guestName": "\u3059\u308f\u3079\u3058\u3085\u3093\u3044\u3061",
+    "hostName": "byte",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0019",
+    "guestName": "\u3059\u305a\u3080\u3089\u3051\u3093\u3044\u3061",
+    "hostName": "modules",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0020",
+    "guestName": "\u3053\u306b\u3057\u304b\u3064\u3086\u304d",
+    "hostName": "src",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0021",
+    "guestName": "\u3084\u307e\u3067\u3089\u3053\u3046\u3044\u3061",
+    "hostName": "vue",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0022",
+    "guestName": "\u306a\u304b\u3060\u3058\u3087\u3046\u3058",
+    "hostName": "loaders",
+    "guestGroup": "G1",
+    "statusId": "03",
+    "statusName": "\u25cb"
+  },
+  {
+    "guestId": "0004",
+    "guestName": "\u308f\u304b\u3082\u3068\u306e\u308a\u304a",
+    "hostName": "modules",
+    "guestGroup": "G3",
+    "statusId": "04",
+    "statusName": "\u25b3"
+  },
+  {
+    "guestId": "0012",
+    "guestName": "\u304a\u306e\u3060\u3044\u3059\u3051",
+    "hostName": "a",
+    "guestGroup": "G3",
+    "statusId": "04",
+    "statusName": "\u25b3"
+  }
+]

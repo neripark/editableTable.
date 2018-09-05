@@ -1,0 +1,42 @@
+[
+  {
+    "name": "a",
+    "show": true
+  },
+  {
+    "name": "b",
+    "show": true
+  },
+  {
+    "name": "byte",
+    "show": true
+  },
+  {
+    "name": "house",
+    "show": true
+  },
+  {
+    "name": "loaders",
+    "show": true
+  },
+  {
+    "name": "modules",
+    "show": true
+  },
+  {
+    "name": "neri",
+    "show": true
+  },
+  {
+    "name": "park",
+    "show": true
+  },
+  {
+    "name": "src",
+    "show": true
+  },
+  {
+    "name": "vue",
+    "show": true
+  }
+]
