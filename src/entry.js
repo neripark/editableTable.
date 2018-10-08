@@ -5,7 +5,14 @@ import eTableComponent from './component/eTable.vue';
 import toast from './component/toast.vue';
 import newRecordButton from './component/newRecordButton.vue';
 import './sass/style.scss';
-import 'bootstrap/dist/js/bootstrap.min.js';
+// import $ from 'jquery/dist/jquery.min.js';
+// impor＄t jquery from 'jquery/dist/fugafuga';
+// import popper from 'popper.js';
+// import bootstrap from 'bootstrap';
+
+// (jquery)();
+// (popper)();
+// (bootstrap)();
 
 Vue.use(Vuex);
 Vue.component('etable', eTableComponent);

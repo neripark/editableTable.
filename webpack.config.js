@@ -11,24 +11,26 @@ module.exports = [
       filename: "./js/[name].js"
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: 'babel-loader',
-          query: {
-            presets: ['es2015']
-          }
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          },
         },
         {
           test: /\.vue$/,
-          exclude: /node_modules/,
-          loader: 'vue-loader',
-          options: {
-            loaders: {
-              scss: 'vue-style-loader!css-loader!sass-loader'
-            }
-          }
+          // exclude: /node_modules/,
+          use: 'vue-loader'
+          // options: {
+          //   loaders: {
+          //     scss: 'vue-style-loader!css-loader!sass-loader'
+          //   }
+          // }
         },
         {
           test: /\.scss$/,

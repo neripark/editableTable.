@@ -24,6 +24,9 @@
 <script>
 import { eventHub } from '../hub.js';
 import Axios from 'axios';
+// import { $ } from 'jquery/dist/jquery.min.js';
+// import 'bootstrap/dist/js/bootstrap.min.js';
+
 export default {
   created: function(){
     eventHub.$on('showToast', this.showToast);
@@ -58,6 +61,7 @@ export default {
         this.statusId = "";
       }
       $('#toast').modal('toggle');
+      // $('#toast').css('display', 'inline-block'); // これは使えたからjQueryは読み込まれている
     },
     postEditData: function(){
       Axios.post('/api/updateGuestInfo.php', this.guestName)
