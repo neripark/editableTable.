@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <!-- bootstrap element -->
   <div class="modal fade" id="toast" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">

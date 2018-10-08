@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <th scope="col" @click="showPo" :class="{poOn:poStyleFlg}">
     <span class="filterCol">{{headTxt}}</span>
     <span class="glyphicon glyphicon-filter" :class="{filterOn:filterOnFlg}"></span>

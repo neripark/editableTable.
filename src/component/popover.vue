@@ -1,4 +1,4 @@
-<template lang="html">
+<templat>
   <transition @before-enter="beforeEnter" @after-leave="afterLeave">
     <div v-show="showFlg">
       <div class="popover bottom" @click.stop>

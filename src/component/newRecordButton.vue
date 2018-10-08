@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div id="newRecordButton">
     <p @click="triggerToast"></p>
   </div>

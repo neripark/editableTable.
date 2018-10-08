@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <tbody>
     <tr v-for="(item, index) in onlyShowDatas" :key="item.key" @click="triggerToast((index));">
       <th scope="row">{{ index + 1 }}</th>
