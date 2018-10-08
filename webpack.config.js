@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = [
   {
@@ -58,7 +59,9 @@ module.exports = [
     plugins: [
       new HtmlWebpackPlugin({
         template: "src/index.html"
-      })
+      }),
+      // vue-loader v15以上の場合は必要
+      new VueLoaderPlugin()
     ],
     resolve: {
       alias: {
