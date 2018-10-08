@@ -1,3 +1,2 @@
 import Vue from 'vue';
-const eventHub = new Vue();
-module.exports = eventHub;
+export const eventHub = new Vue();

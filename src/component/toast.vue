@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import eventHub from '../hub.js';
+import { eventHub } from '../hub.js';
 import Axios from 'axios';
 export default {
   created: function(){

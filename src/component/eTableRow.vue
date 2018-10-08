@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import eventHub from '../hub.js';
+import { eventHub } from '../hub.js';
 export default {
   computed: {
     onlyShowDatas(){
